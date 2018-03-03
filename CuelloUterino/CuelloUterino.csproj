@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -184,22 +186,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anticoncepcion.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="AspNetRoles.cs" />
+    <Compile Include="AspNetUserClaims.cs" />
+    <Compile Include="AspNetUserLogins.cs" />
+    <Compile Include="AspNetUsers.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="C__MigrationHistory.cs" />
+    <Compile Include="DiagnosticoCitologico.cs" />
+    <Compile Include="Edades.cs" />
+    <Compile Include="EstudioSolicitado.cs" />
+    <Compile Include="Fechas.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Informe.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="MuestraPieza.cs" />
+    <Compile Include="Paridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoPruebaHibrida.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="sysdiagrams.cs" />
+    <Compile Include="TipoHistologico.cs" />
+    <Compile Include="Valoracion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -258,6 +280,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Informes\Create.cshtml" />
+    <Content Include="Views\Informes\Delete.cshtml" />
+    <Content Include="Views\Informes\Details.cshtml" />
+    <Content Include="Views\Informes\Edit.cshtml" />
+    <Content Include="Views\Informes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
