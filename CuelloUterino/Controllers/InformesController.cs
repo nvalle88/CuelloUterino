@@ -40,18 +40,18 @@ namespace CuelloUterino.Controllers
         // GET: Informes/Create
         public ActionResult Create()
         {
-            ViewBag.idAnticoncepcion = new SelectList(db.Anticoncepcion, "idAnticoncepcion", "Descripcion");
-            ViewBag.idDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "idDiagnosticoCitologico", "Descripcion");
-            ViewBag.idEdades = new SelectList(db.Edades, "idEdades", "Descripcion");
-            ViewBag.idEstudio = new SelectList(db.EstudioSolicitado, "idEstudio", "descripcion");
-            ViewBag.idFechas = new SelectList(db.Fechas, "idFechas", "Descripcion");
-            ViewBag.idMaterial = new SelectList(db.Material, "idMaterial", "Descripcion");
-            ViewBag.idMuestraPieza = new SelectList(db.MuestraPieza, "idMuestraPieza", "Descripcion");
-            ViewBag.idParidad = new SelectList(db.Paridad, "idParidad", "Descripcion");
-            ViewBag.idResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "idResultadoPruebaHibrida", "Descripcion");
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion");
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion");
-            ViewBag.idValoracion = new SelectList(db.Valoracion, "idValoracion", "Descripcion");
+            ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion");
+            ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion");
+            ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion");
+            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion");
+            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion");
+            ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion");
+            ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion");
+            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion");
+            ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion");
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
+            ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace CuelloUterino.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "idInforme,nombres,apellidos,edad,fecha_muestra,identificacion,historia_clinica,telefono_convencional,telefono_celular,correo,nombres_apellidos_referencia,grado_afinidad,telefono,terapia_hormonal,recomendaciones,idEstudio,idMaterial,idAnticoncepcion,idEdades,idParidad,idFechas,idDiagnosticoCitologico,idValoracion,idResultadoPruebaHibrida,idMuestraPieza,idTipoHistologico")] Informe informe)
+        public async Task<ActionResult> Create(Informe informe)
         {
             if (ModelState.IsValid)
             {
@@ -69,18 +69,18 @@ namespace CuelloUterino.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idAnticoncepcion = new SelectList(db.Anticoncepcion, "idAnticoncepcion", "Descripcion", informe.idAnticoncepcion);
-            ViewBag.idDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "idDiagnosticoCitologico", "Descripcion", informe.idDiagnosticoCitologico);
-            ViewBag.idEdades = new SelectList(db.Edades, "idEdades", "Descripcion", informe.idEdades);
-            ViewBag.idEstudio = new SelectList(db.EstudioSolicitado, "idEstudio", "descripcion", informe.idEstudio);
-            ViewBag.idFechas = new SelectList(db.Fechas, "idFechas", "Descripcion", informe.idFechas);
-            ViewBag.idMaterial = new SelectList(db.Material, "idMaterial", "Descripcion", informe.idMaterial);
-            ViewBag.idMuestraPieza = new SelectList(db.MuestraPieza, "idMuestraPieza", "Descripcion", informe.idMuestraPieza);
-            ViewBag.idParidad = new SelectList(db.Paridad, "idParidad", "Descripcion", informe.idParidad);
-            ViewBag.idResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "idResultadoPruebaHibrida", "Descripcion", informe.idResultadoPruebaHibrida);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idValoracion = new SelectList(db.Valoracion, "idValoracion", "Descripcion", informe.idValoracion);
+            ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
+            ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
+            ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
+            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
+            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
+            ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
+            ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
+            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+            ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion", informe.IdValoracion);
             return View(informe);
         }
 
@@ -96,18 +96,18 @@ namespace CuelloUterino.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.idAnticoncepcion = new SelectList(db.Anticoncepcion, "idAnticoncepcion", "Descripcion", informe.idAnticoncepcion);
-            ViewBag.idDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "idDiagnosticoCitologico", "Descripcion", informe.idDiagnosticoCitologico);
-            ViewBag.idEdades = new SelectList(db.Edades, "idEdades", "Descripcion", informe.idEdades);
-            ViewBag.idEstudio = new SelectList(db.EstudioSolicitado, "idEstudio", "descripcion", informe.idEstudio);
-            ViewBag.idFechas = new SelectList(db.Fechas, "idFechas", "Descripcion", informe.idFechas);
-            ViewBag.idMaterial = new SelectList(db.Material, "idMaterial", "Descripcion", informe.idMaterial);
-            ViewBag.idMuestraPieza = new SelectList(db.MuestraPieza, "idMuestraPieza", "Descripcion", informe.idMuestraPieza);
-            ViewBag.idParidad = new SelectList(db.Paridad, "idParidad", "Descripcion", informe.idParidad);
-            ViewBag.idResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "idResultadoPruebaHibrida", "Descripcion", informe.idResultadoPruebaHibrida);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idValoracion = new SelectList(db.Valoracion, "idValoracion", "Descripcion", informe.idValoracion);
+            ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
+            ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
+            ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
+            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
+            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
+            ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
+            ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
+            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+            ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion", informe.IdValoracion);
             return View(informe);
         }
 
@@ -116,7 +116,7 @@ namespace CuelloUterino.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "idInforme,nombres,apellidos,edad,fecha_muestra,identificacion,historia_clinica,telefono_convencional,telefono_celular,correo,nombres_apellidos_referencia,grado_afinidad,telefono,terapia_hormonal,recomendaciones,idEstudio,idMaterial,idAnticoncepcion,idEdades,idParidad,idFechas,idDiagnosticoCitologico,idValoracion,idResultadoPruebaHibrida,idMuestraPieza,idTipoHistologico")] Informe informe)
+        public async Task<ActionResult> Edit([Bind(Include = "idInforme,Nombres,Apellidos,edad,TelefonoCelular,Identificacion,historiaclinica,TelefonoConvencional,TelefonoCelular,Correo,NombresApellidosReferencia,GradoAfinidad,Telefono,terapia_hormonal,Recomendaciones,IdEstudio,IdMaterial,IdAnticoncepcion,IdEdades,IdParidad,IdFechas,IdDiagnosticoCitologico,IdValoracion,IdResultadoPruebaHibrida,IdMuestraPieza,IdTipoHistologico")] Informe informe)
         {
             if (ModelState.IsValid)
             {
@@ -124,18 +124,18 @@ namespace CuelloUterino.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.idAnticoncepcion = new SelectList(db.Anticoncepcion, "idAnticoncepcion", "Descripcion", informe.idAnticoncepcion);
-            ViewBag.idDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "idDiagnosticoCitologico", "Descripcion", informe.idDiagnosticoCitologico);
-            ViewBag.idEdades = new SelectList(db.Edades, "idEdades", "Descripcion", informe.idEdades);
-            ViewBag.idEstudio = new SelectList(db.EstudioSolicitado, "idEstudio", "descripcion", informe.idEstudio);
-            ViewBag.idFechas = new SelectList(db.Fechas, "idFechas", "Descripcion", informe.idFechas);
-            ViewBag.idMaterial = new SelectList(db.Material, "idMaterial", "Descripcion", informe.idMaterial);
-            ViewBag.idMuestraPieza = new SelectList(db.MuestraPieza, "idMuestraPieza", "Descripcion", informe.idMuestraPieza);
-            ViewBag.idParidad = new SelectList(db.Paridad, "idParidad", "Descripcion", informe.idParidad);
-            ViewBag.idResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "idResultadoPruebaHibrida", "Descripcion", informe.idResultadoPruebaHibrida);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idTipoHistologico = new SelectList(db.TipoHistologico, "idTipoHistologico", "Descripcion", informe.idTipoHistologico);
-            ViewBag.idValoracion = new SelectList(db.Valoracion, "idValoracion", "Descripcion", informe.idValoracion);
+            ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
+            ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
+            ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
+            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
+            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
+            ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
+            ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
+            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+            ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
+            ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion", informe.IdValoracion);
             return View(informe);
         }
 

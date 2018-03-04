@@ -18,7 +18,7 @@ namespace CuelloUterino
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
+            // Conecte su servicio de Correo electrónico aquí para enviar Correo electrónico.
             return Task.FromResult(0);
         }
     }
@@ -43,7 +43,7 @@ namespace CuelloUterino
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-            // Configure la lógica de validación de nombres de usuario
+            // Configure la lógica de validación de Nombres de usuario
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
@@ -71,7 +71,7 @@ namespace CuelloUterino
             {
                 MessageFormat = "Su código de seguridad es {0}"
             });
-            manager.RegisterTwoFactorProvider("Código de correo electrónico", new EmailTokenProvider<ApplicationUser>
+            manager.RegisterTwoFactorProvider("Código de Correo electrónico", new EmailTokenProvider<ApplicationUser>
             {
                 Subject = "Código de seguridad",
                 BodyFormat = "Su código de seguridad es {0}"

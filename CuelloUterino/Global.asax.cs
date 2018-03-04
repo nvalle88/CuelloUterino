@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CuelloUterino.Utiles;
+using SmartAdminMvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,10 @@ namespace CuelloUterino
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Constantes.Adecuadas= System.Configuration.ConfigurationManager.AppSettings["Adecuada"];
+            Constantes.Positivo = System.Configuration.ConfigurationManager.AppSettings["Positivo"];
+            Constantes.Negativo = System.Configuration.ConfigurationManager.AppSettings["Negativo"];
+            Constantes.Indeterminado = System.Configuration.ConfigurationManager.AppSettings["Indeterminado"];
         }
     }
 }
