@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -311,14 +314,8 @@
     <Content Include="Areas\Landing\Content\js\plugins\jquery.themepunch.revolution.min.js" />
     <Content Include="Areas\Landing\Content\js\plugins\nivo-lightbox.min.js" />
     <Content Include="Areas\Landing\Content\js\plugins\smoothscroll.js" />
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\CuelloUterino.dll" />
+    <Content Include="bin\CuelloUterino.dll.config" />
     <Content Include="bin\CuelloUterino.pdb" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\es\EntityFramework.resources.dll" />
     <Content Include="bin\es\EntityFramework.SqlServer.resources.dll" />
     <Content Include="bin\es\Microsoft.AspNet.Identity.Core.resources.dll" />
@@ -338,48 +335,6 @@
     <Content Include="bin\es\System.Web.WebPages.Deployment.resources.dll" />
     <Content Include="bin\es\System.Web.WebPages.Razor.resources.dll" />
     <Content Include="bin\es\System.Web.WebPages.resources.dll" />
-    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
-    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
-    <Content Include="bin\Microsoft.AI.DependencyCollector.xml" />
-    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
-    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
-    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.xml" />
-    <Content Include="bin\Microsoft.AI.Web.dll" />
-    <Content Include="bin\Microsoft.AI.Web.xml" />
-    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
-    <Content Include="bin\Microsoft.AI.WindowsServer.xml" />
-    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Microsoft.Owin.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.xml" />
-    <Content Include="bin\Microsoft.Owin.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\Owin.dll" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
     <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
@@ -419,21 +374,6 @@
     <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\ajax\email-compose.html" />
     <Content Include="Content\ajax\email-opened.html" />
     <Content Include="Content\ajax\email-reply.html" />
@@ -461,6 +401,7 @@
     <Content Include="Content\fonts\fontawesome4.2\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\fontawesome4.2\readme.txt" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\digitalStrategy.png" />
     <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\img\alpha.png" />
     <Content Include="Content\img\avatars\1.png" />
@@ -740,8 +681,6 @@
     <Content Include="Areas\Landing\Views\Landing\Index.cshtml" />
     <Content Include="Areas\Landing\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Landing\Views\web.config" />
-    <Content Include="bin\ApplicationInsights.config" />
-    <Content Include="bin\CuelloUterino.dll.config" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />
     <Content Include="bin\roslyn\csi.exe.config" />
@@ -772,6 +711,8 @@
     <Content Include="Content\sound\voice_off.ogg" />
     <Content Include="Content\sound\voice_on.ogg" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -783,6 +724,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\libs\jquery-2.1.1.min.js" />
     <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\libs\waitMe\img.svg" />
+    <Content Include="Scripts\libs\waitMe\index.html" />
+    <Content Include="Scripts\libs\waitMe\waitMe.css" />
+    <Content Include="Scripts\libs\waitMe\waitMe.js" />
+    <Content Include="Scripts\libs\waitMe\waitMe.min.css" />
+    <Content Include="Scripts\libs\waitMe\waitMe.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\notification\SmartNotification.min.js" />
     <Content Include="Scripts\plugin\bootstrap-duallistbox\jquery.bootstrap-duallistbox.min.js" />
@@ -1232,7 +1179,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -1251,12 +1197,6 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Informes\Create.cshtml" />
@@ -1280,66 +1220,10 @@
     <Content Include="Views\Account\_ErrorText.cshtml" />
     <Content Include="Views\Account\_LoginText.cshtml" />
     <Content Include="Views\Account\_SocialMedia.cshtml" />
-    <Content Include="Views\AppViews\Blog.cshtml" />
-    <Content Include="Views\AppViews\Gallery.cshtml" />
-    <Content Include="Views\AppViews\Profile.cshtml" />
-    <Content Include="Views\AppViews\Projects.cshtml" />
-    <Content Include="Views\AppViews\TimeLine.cshtml" />
-    <Content Include="Views\Commerce\Detail.cshtml" />
-    <Content Include="Views\Commerce\Orders.cshtml" />
-    <Content Include="Views\Commerce\ProductView.cshtml" />
-    <Content Include="Views\Element\Buttons.cshtml" />
-    <Content Include="Views\Element\General.cshtml" />
-    <Content Include="Views\EmailTemplates\Basic.cshtml" />
-    <Content Include="Views\EmailTemplates\Hero.cshtml" />
-    <Content Include="Views\EmailTemplates\NewsLetter.cshtml" />
-    <Content Include="Views\EmailTemplates\SideBar.cshtml" />
-    <Content Include="Views\EmailTemplates\SideBarHero.cshtml" />
-    <Content Include="Views\Features\Calendar.cshtml" />
-    <Content Include="Views\Features\Googlemap.cshtml" />
-    <Content Include="Views\Forms\Bootstrap.cshtml" />
-    <Content Include="Views\Forms\Cropping.cshtml" />
-    <Content Include="Views\Forms\Dropzone.cshtml" />
-    <Content Include="Views\Forms\Editors.cshtml" />
-    <Content Include="Views\Forms\Plugins.cshtml" />
-    <Content Include="Views\Forms\SmartElements.cshtml" />
-    <Content Include="Views\Forms\Templates.cshtml" />
-    <Content Include="Views\Forms\Validation.cshtml" />
-    <Content Include="Views\Forms\Validator.cshtml" />
-    <Content Include="Views\Forms\Wizards.cshtml" />
-    <Content Include="Views\Forum\GeneralView.cshtml" />
-    <Content Include="Views\Forum\PostView.cshtml" />
-    <Content Include="Views\Forum\TopicView.cshtml" />
-    <Content Include="Views\Graphs\ChartJS.cshtml" />
-    <Content Include="Views\Graphs\Dygraphs.cshtml" />
-    <Content Include="Views\Graphs\Flot.cshtml" />
-    <Content Include="Views\Graphs\HighCharts.cshtml" />
-    <Content Include="Views\Graphs\Inline.cshtml" />
-    <Content Include="Views\Graphs\Morris.cshtml" />
     <Content Include="Views\Home\Chat.cshtml" />
     <Content Include="Views\Home\Inbox.cshtml" />
     <Content Include="Views\Home\Social.cshtml" />
     <Content Include="Views\Home\Widgets.cshtml" />
-    <Content Include="Views\Icons\Flags.cshtml" />
-    <Content Include="Views\Icons\FontAwesome.cshtml" />
-    <Content Include="Views\Icons\GlyphIcons.cshtml" />
-    <Content Include="Views\Icons\Grid.cshtml" />
-    <Content Include="Views\Icons\JQueryUI.cshtml" />
-    <Content Include="Views\Icons\NestedLists.cshtml" />
-    <Content Include="Views\Icons\TreeView.cshtml" />
-    <Content Include="Views\Icons\Typography.cshtml" />
-    <Content Include="Views\Intel\AppLayout.cshtml" />
-    <Content Include="Views\Intel\Settings.cshtml" />
-    <Content Include="Views\Intel\Skins.cshtml" />
-    <Content Include="Views\Misc\Blank.cshtml" />
-    <Content Include="Views\Misc\CKEditor.cshtml" />
-    <Content Include="Views\Misc\EmailTemplate.cshtml" />
-    <Content Include="Views\Misc\Error404.cshtml" />
-    <Content Include="Views\Misc\Error500.cshtml" />
-    <Content Include="Views\Misc\Invoice.cshtml" />
-    <Content Include="Views\Misc\Pricing.cshtml" />
-    <Content Include="Views\Misc\Search.cshtml" />
-    <Content Include="Views\Misc\Versions.cshtml" />
     <Content Include="Views\Shared\_Aside.cshtml" />
     <Content Include="Views\Shared\_CurrentUser.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -1349,9 +1233,9 @@
     <Content Include="Views\Shared\_TermsAndConditions.cshtml" />
     <Content Include="Views\Shared\_Tiles.cshtml" />
     <Content Include="Views\Shared\_TopRight.cshtml" />
-    <Content Include="Views\Tables\DataTables.cshtml" />
-    <Content Include="Views\Tables\JQGrid.cshtml" />
-    <Content Include="Views\Tables\Normal.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\libs\waitMe\LICENSE.md" />
+    <Content Include="Scripts\libs\waitMe\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

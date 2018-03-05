@@ -6,51 +6,56 @@
 
 
 <div id="content" class="container">
-    <div class="row col-lg-12">
-        <div class="col-lg-6">
-            <div class="well no-padding">
-                <form action="@Url.Action("login", "account")" method="POST" id="login-form" class="smart-form client-form">
-                    <header>
-                        Autenticar
-                    </header>
+    <div class="row ">
+        <div class="col-lg-3"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="center-block no-padding">
+                <div class="well no-padding">
+                    <form action="@Url.Action("login", "account")" method="POST" id="login-form" class="smart-form client-form">
+                        
+                        <header>
+                            <p class="text-center">  <i class="fa fa-user"></i> Autenticar</p>
+                        </header>
 
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationBootstrap()
-                    <fieldset>
-                        <section>
-                            <label class="label">@Html.DisplayNameFor(model => model.Email)</label>
-                            <label class="input">
-                                <i class="icon-append fa fa-user"></i>
-                                <input type="email" name="Email">
-                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Por favor entre su usuario</b>
-                            </label>
-                        </section>
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationBootstrap()
+                        <fieldset>
+                            <section>
+                                <label class="label">@Html.DisplayNameFor(model => model.Email)</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-user"></i>
+                                    <input type="email" name="Email">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Por favor entre su usuario</b>
+                                </label>
+                            </section>
 
-                        <section>
-                            <label class="label">@Html.DisplayNameFor(model => model.Password)</label>
-                            <label class="input">
-                                <i class="icon-append fa fa-lock"></i>
-                                <input type="password" name="Password">
-                                <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>Por favor entre su contraseña</b>
-                            </label>
-                        </section>
+                            <section>
+                                <label class="label">@Html.DisplayNameFor(model => model.Password)</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-lock"></i>
+                                    <input type="password" name="Password">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>Por favor entre su contraseña</b>
+                                </label>
+                            </section>
 
-                        <section>
-                            <label class="checkbox">
-                                <input type="checkbox" name="RememberMe" value="true" checked="checked">
-                                <input type="hidden" name="RememberMe" value="false" />
-                                <i></i>@Html.DisplayNameFor(model => model.RememberMe)
-                            </label>
-                        </section>
-                    </fieldset>
-                    <footer>
-                        <button type="submit" class="btn btn-primary">
-                            Aceptar
-                        </button>
-                    </footer>
-                </form>
+                            <section>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="RememberMe" value="true" checked="checked">
+                                    <input type="hidden" name="RememberMe" value="false" />
+                                    <i></i>@Html.DisplayNameFor(model => model.RememberMe)
+                                </label>
+                            </section>
+                        </fieldset>
+                        <footer>
+
+                            <button type="submit" class="btn btn-primary">
+                                Aceptar
+                            </button>
+                           <i class="fa fa-plus"></i> @Html.ActionLink("Registrar nuevo usuario", "Register", "Account")
+                        </footer>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
 </div>

@@ -11,6 +11,7 @@ using CuelloUterino;
 
 namespace CuelloUterino.Controllers
 {
+    [Authorize]
     public class InformesController : Controller
     {
         private Model db = new Model();
@@ -116,7 +117,7 @@ namespace CuelloUterino.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "idInforme,Nombres,Apellidos,edad,TelefonoCelular,Identificacion,historiaclinica,TelefonoConvencional,TelefonoCelular,Correo,NombresApellidosReferencia,GradoAfinidad,Telefono,terapia_hormonal,Recomendaciones,IdEstudio,IdMaterial,IdAnticoncepcion,IdEdades,IdParidad,IdFechas,IdDiagnosticoCitologico,IdValoracion,IdResultadoPruebaHibrida,IdMuestraPieza,IdTipoHistologico")] Informe informe)
+        public async Task<ActionResult> Edit(Informe informe)
         {
             if (ModelState.IsValid)
             {
@@ -139,25 +140,9 @@ namespace CuelloUterino.Controllers
             return View(informe);
         }
 
-        // GET: Informes/Delete/5
-        public async Task<ActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Informe informe = await db.Informe.FindAsync(id);
-            if (informe == null)
-            {
-                return HttpNotFound();
-            }
-            return View(informe);
-        }
-
+     
         // POST: Informes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             Informe informe = await db.Informe.FindAsync(id);
             db.Informe.Remove(informe);

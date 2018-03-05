@@ -18,6 +18,7 @@ namespace SmartAdminMvc
                 "~/scripts/bootstrap/bootstrap.min.js",
                 "~/scripts/notification/SmartNotification.min.js",
                 "~/scripts/smartwidgets/jarvis.widget.min.js",
+                "~/scripts/libs/waitMe/waitMe.min.js",
                 "~/scripts/plugin/jquery-validate/jquery.validate.min.js",
                 "~/scripts/plugin/masked-input/jquery.maskedinput.min.js",
                 "~/scripts/plugin/select2/select2.min.js",
