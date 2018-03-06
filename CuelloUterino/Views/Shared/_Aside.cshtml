@@ -1,9 +1,9 @@
 ﻿    <!-- Left panel : Navigation area -->
 <!-- Note: This width of the aside area can be adjusted through LESS variables -->
-
 <link rel="stylesheet" href="~/Scripts/libs/waitMe/waitMe.min.css" />
 <link rel="stylesheet" href="~/Scripts/libs/waitMe/waitMe.css" />
 <script src="~/Scripts/libs/waitMe/waitMe.min.js"></script>
+
 
 <aside id="left-panel">
 
@@ -24,13 +24,13 @@
 
         <ul>
             <li class="@Html.RouteIf("Home", "active")">
-                <a href="#" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Home</span></a>
+                <a href="#" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Home</span></a>
                 <ul>
                     <li class="@Html.RouteIf("home", "active")">
-                        <a id="analitica" href="@Url.Action("index", "home")" title="Dashboard"><span class="menu-item-parent">Analítica</span></a>
+                        <a class="analiticamenu" href="@Url.Action("index", "home")" title="Analítica"><span class="menu-item-parent">Analítica</span></a>
                     </li>
                     <li class="@Html.RouteIf("Informes", "active")">
-                        <a href="@Url.Action("Index", "Informes")" title="Dashboard"><span class="menu-item-parent">Tamizaje</span></a>
+                        <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent">Tamizaje</span></a>
                     </li>
                     <li class="@Html.RouteIf("Reporte", "active")">
                         <a href="@Url.Action("Index", "Reporte")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
@@ -44,32 +44,10 @@
     </span>
 
 </aside>
-@section pagespecific {
-    @Scripts.Render("~/bundles/jqueryval")
 
     <script type="text/javascript">
+        
 
-        // DO NOT REMOVE : GLOBAL FUNCTIONS!
-
-        $(document).ready(function () {
-
-            $("#analitica").click(function () {
-            $('#left-panel').waitMe({
-                effect: 'ios',
-                text: 'Cargando...',
-                bg: 'rgba(255, 255, 255, 0.7)',
-                color: '#3276B1'
-            });
-        });
-
-        $("#regresar1").click(function () {
-            $('#left-panel').waitMe({
-                effect: 'ios',
-                text: 'Cargando...',
-                bg: 'rgba(255, 255, 255, 0.7)',
-                color: '#3276B1'
-            });
-        });
-
+        
     </script>
-}
+

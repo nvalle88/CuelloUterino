@@ -10,6 +10,7 @@ namespace CuelloUterino
     public partial class Informe
     {
         [Key]
+        [Display(Name = "Número de tamizaje")]
         public int IdInforme { get; set; }
 
         [Required]
