@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CuelloUterino;
+using CuelloUterino.ModeloDatos;
+using System.Globalization;
 
 namespace CuelloUterino.Controllers
 {
@@ -19,7 +21,7 @@ namespace CuelloUterino.Controllers
         // GET: Informes
         public async Task<ActionResult> Index()
         {
-            var informe = db.Informe.Include(i => i.Anticoncepcion).Include(i => i.DiagnosticoCitologico).Include(i => i.Edades).Include(i => i.EstudioSolicitado).Include(i => i.Fechas).Include(i => i.Material).Include(i => i.MuestraPieza).Include(i => i.Paridad).Include(i => i.ResultadoPruebaHibrida).Include(i => i.TipoHistologico).Include(i => i.TipoHistologico1).Include(i => i.Valoracion);
+            var informe = db.Informe.Include(i => i.Anticoncepcion).Include(i => i.DiagnosticoCitologico).Include(i => i.Edades).Include(i => i.Material).Include(i => i.MuestraPieza).Include(i => i.Paridad).Include(i => i.ResultadoPruebaHibrida).Include(i => i.TipoHistologico).Include(i => i.TipoHistologico1).Include(i => i.Valoracion);
             return View(await informe.ToListAsync());
         }
 
@@ -44,8 +46,6 @@ namespace CuelloUterino.Controllers
             ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion");
             ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion");
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion");
-            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion");
-            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion");
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion");
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion");
             ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion");
@@ -53,7 +53,8 @@ namespace CuelloUterino.Controllers
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
             ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion");
-            return View();
+            var informe = new Informe { CitologiaVPH = false, Coloscopia = false, Histopatologia = false, };
+            return View(informe);
         }
 
         // POST: Informes/Create
@@ -73,8 +74,6 @@ namespace CuelloUterino.Controllers
             ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
             ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
-            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
-            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
             ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
@@ -100,8 +99,6 @@ namespace CuelloUterino.Controllers
             ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
             ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
-            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
-            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
             ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
@@ -109,6 +106,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion", informe.IdValoracion);
+
             return View(informe);
         }
 
@@ -128,8 +126,6 @@ namespace CuelloUterino.Controllers
             ViewBag.IdAnticoncepcion = new SelectList(db.Anticoncepcion, "IdAnticoncepcion", "Descripcion", informe.IdAnticoncepcion);
             ViewBag.IdDiagnosticoCitologico = new SelectList(db.DiagnosticoCitologico, "IdDiagnosticoCitologico", "Descripcion", informe.IdDiagnosticoCitologico);
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
-            ViewBag.IdEstudio = new SelectList(db.EstudioSolicitado, "IdEstudio", "descripcion", informe.IdEstudio);
-            ViewBag.IdFechas = new SelectList(db.Fechas, "IdFechas", "Descripcion", informe.IdFechas);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
             ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
@@ -137,6 +133,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdValoracion = new SelectList(db.Valoracion, "IdValoracion", "Descripcion", informe.IdValoracion);
+
             return View(informe);
         }
 

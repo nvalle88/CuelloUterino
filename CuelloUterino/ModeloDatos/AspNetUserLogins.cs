@@ -1,4 +1,4 @@
-namespace CuelloUterino
+namespace CuelloUterino.ModeloDatos
 {
     using System;
     using System.Collections.Generic;

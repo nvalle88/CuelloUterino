@@ -1,4 +1,5 @@
-﻿using CuelloUterino.Models;
+﻿using CuelloUterino.ModeloDatos;
+using CuelloUterino.Models;
 using CuelloUterino.Utiles;
 using System;
 using System.Collections.Generic;
@@ -13,36 +14,96 @@ namespace CuelloUterino.Controllers
     {
         private Model db = new Model();
 
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult Index(AnaliticaViewModel analiticaViewModel)
         {
-            var fechaActual = DateTime.Now;
-
-           var cantidadTotal= db.Informe.ToList().Count;
-
-           // var positivo=db.Informe.Where(x=>x.)
-           var muestrasDiario= db.Informe.Where(x => x.FechaMuestra.Day == fechaActual.Day 
-                                        && x.FechaMuestra.Month == fechaActual.Month 
-                                        && x.FechaMuestra.Year == fechaActual.Year)
-                                        .ToList().Count;
-
-            var muestrasMensual = db.Informe.Where(x=>x.FechaMuestra.Month == fechaActual.Month
-                                                   && x.FechaMuestra.Year == fechaActual.Year)
-                                                   .ToList().Count;
-
-            var muestrasAnual = db.Informe.Where(x =>x.FechaMuestra.Year == fechaActual.Year)
+            var cantidadTotal = db.Informe.Where(x=>
+                                                    (
+                                                     x.FechaMuestra.Year>=analiticaViewModel.FechaInicio.Year
+                                                     && x.FechaMuestra.Month >= analiticaViewModel.FechaInicio.Month
+                                                     && x.FechaMuestra.Day >= analiticaViewModel.FechaInicio.Day
+                                                    )
+                                                
+                                                    &&
+                                                
+                                                    (
+                                                     x.FechaMuestra.Year<=analiticaViewModel.FechaFin.Year
+                                                     && x.FechaMuestra.Month<=analiticaViewModel.FechaFin.Month
+                                                     && x.FechaMuestra.Day <=analiticaViewModel.FechaFin.Day
+                                                    )
+                                                )
                                                  .ToList().Count;
 
+            if (cantidadTotal!=0)
+            {
 
 
-            var positivo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion ==Constantes.Positivo).ToList().Count;
+                var positivo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Positivo &&
+                                                       (
+                                                         x.FechaMuestra.Year >= analiticaViewModel.FechaInicio.Year
+                                                         && x.FechaMuestra.Month >= analiticaViewModel.FechaInicio.Month
+                                                         && x.FechaMuestra.Day >= analiticaViewModel.FechaInicio.Day
+                                                        )
 
-            var negativo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Negativo).ToList().Count;
+                                                        &&
 
-            var indeterminado = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Indeterminado).ToList().Count;
+                                                        (
+                                                         x.FechaMuestra.Year <= analiticaViewModel.FechaFin.Year
+                                                         && x.FechaMuestra.Month <= analiticaViewModel.FechaFin.Month
+                                                         && x.FechaMuestra.Day <= analiticaViewModel.FechaFin.Day
+                                                        )
+                                                        ).ToList().Count;
+                                            
 
-            var adecuada = db.Informe.Where(x => x.Valoracion.Descripcion == Constantes.Adecuadas).ToList().Count;
+            var negativo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Negativo &&
+                                            (
+                                                         x.FechaMuestra.Year >= analiticaViewModel.FechaInicio.Year
+                                                         && x.FechaMuestra.Month >= analiticaViewModel.FechaInicio.Month
+                                                         && x.FechaMuestra.Day >= analiticaViewModel.FechaInicio.Day
+                                                        )
 
-            var porcientoPositivo = (positivo * 100) / cantidadTotal;
+                                                        &&
+
+                                                        (
+                                                         x.FechaMuestra.Year <= analiticaViewModel.FechaFin.Year
+                                                         && x.FechaMuestra.Month <= analiticaViewModel.FechaFin.Month
+                                                         && x.FechaMuestra.Day <= analiticaViewModel.FechaFin.Day
+                                                        )
+                                                        ).ToList().Count;
+
+                var indeterminado = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Indeterminado &&
+                                                       (
+                                                         x.FechaMuestra.Year >= analiticaViewModel.FechaInicio.Year
+                                                         && x.FechaMuestra.Month >= analiticaViewModel.FechaInicio.Month
+                                                         && x.FechaMuestra.Day >= analiticaViewModel.FechaInicio.Day
+                                                        )
+
+                                                        &&
+
+                                                        (
+                                                         x.FechaMuestra.Year <= analiticaViewModel.FechaFin.Year
+                                                         && x.FechaMuestra.Month <= analiticaViewModel.FechaFin.Month
+                                                         && x.FechaMuestra.Day <= analiticaViewModel.FechaFin.Day
+                                                        )
+                                                        ).ToList().Count;
+
+                var adecuada = db.Informe.Where(x => x.Valoracion.Descripcion == Constantes.Adecuadas &&
+                                                       (
+                                                         x.FechaMuestra.Year >= analiticaViewModel.FechaInicio.Year
+                                                         && x.FechaMuestra.Month >= analiticaViewModel.FechaInicio.Month
+                                                         && x.FechaMuestra.Day >= analiticaViewModel.FechaInicio.Day
+                                                        )
+
+                                                        &&
+
+                                                        (
+                                                         x.FechaMuestra.Year <= analiticaViewModel.FechaFin.Year
+                                                         && x.FechaMuestra.Month <= analiticaViewModel.FechaFin.Month
+                                                         && x.FechaMuestra.Day <= analiticaViewModel.FechaFin.Day
+                                                        )
+                                                        ).ToList().Count;
+
+                var porcientoPositivo = (positivo * 100) / cantidadTotal;
 
             var porcientoNegativo = (negativo * 100) / cantidadTotal;
 
@@ -56,18 +117,70 @@ namespace CuelloUterino.Controllers
                 PorcientoIndeterminado = Convert.ToInt32(porcientoIndeterminado),
                 PorcientoNegativo = Convert.ToInt32(porcientoNegativo),
                 PorcientoPositivo = Convert.ToInt32(porcientoPositivo),
+                FechaFin = analiticaViewModel.FechaFin,
+                FechaInicio = analiticaViewModel.FechaInicio,
 
-                Negativo=negativo,
-                Positivo=positivo,
-                Indeterminado=indeterminado,
-                Adecuado=adecuada,
-
-                Anual=muestrasAnual,
-                Diario=muestrasDiario,
-                Mensual=muestrasMensual,
-                Total=cantidadTotal,
+                Negativo = negativo,
+                Positivo = positivo,
+                Indeterminado = indeterminado,
+                Adecuado = adecuada,
+                Total = cantidadTotal,
             };
             return View(viewModel);
+            };
+            return View(analiticaViewModel);
+        }
+
+        public ActionResult Index()
+        {
+
+            var cantidadTotal = db.Informe.ToList().Count;
+            if (cantidadTotal!=0)
+            {
+                
+
+                var positivo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Positivo).ToList().Count;
+
+                var negativo = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Negativo).ToList().Count;
+
+                var indeterminado = db.Informe.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Indeterminado).ToList().Count;
+
+                var adecuada = db.Informe.Where(x => x.Valoracion.Descripcion == Constantes.Adecuadas).ToList().Count;
+
+                var porcientoPositivo = (positivo * 100) / cantidadTotal;
+
+                var porcientoNegativo = (negativo * 100) / cantidadTotal;
+
+                var porcientoIndeterminado = (indeterminado * 100) / cantidadTotal;
+
+                var porcientoAdecuado = (adecuada * 100) / cantidadTotal;
+
+
+                var fechaFin1 = DateTime.Now.Date;
+                var fechaInicio1 = fechaFin1.AddMonths(-1);
+                var viewModel = new AnaliticaViewModel
+                {
+                    PorcientoAdecuadas = Convert.ToInt32(porcientoAdecuado),
+                    PorcientoIndeterminado = Convert.ToInt32(porcientoIndeterminado),
+                    PorcientoNegativo = Convert.ToInt32(porcientoNegativo),
+                    PorcientoPositivo = Convert.ToInt32(porcientoPositivo),
+                    FechaFin = DateTime.Now.Date,
+                    FechaInicio = fechaInicio1,
+
+                    Negativo = negativo,
+                    Positivo = positivo,
+                    Indeterminado = indeterminado,
+                    Adecuado = adecuada,
+
+                    Total = cantidadTotal,
+                };
+                return View(viewModel); 
+            }
+            else
+            {
+                var viewModel = new AnaliticaViewModel();
+                return View(viewModel);
+            }
         }
 
         public ActionResult About()

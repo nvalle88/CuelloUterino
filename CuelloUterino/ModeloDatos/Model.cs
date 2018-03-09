@@ -1,4 +1,4 @@
-namespace CuelloUterino
+namespace CuelloUterino.ModeloDatos
 {
     using System;
     using System.Data.Entity;
@@ -8,7 +8,7 @@ namespace CuelloUterino
     public partial class Model : DbContext
     {
         public Model()
-            : base("name=CuelloUterino")
+            : base("name=ModelCuelloInforme")
         {
         }
 
@@ -20,8 +20,6 @@ namespace CuelloUterino
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<DiagnosticoCitologico> DiagnosticoCitologico { get; set; }
         public virtual DbSet<Edades> Edades { get; set; }
-        public virtual DbSet<EstudioSolicitado> EstudioSolicitado { get; set; }
-        public virtual DbSet<Fechas> Fechas { get; set; }
         public virtual DbSet<Informe> Informe { get; set; }
         public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<MuestraPieza> MuestraPieza { get; set; }
@@ -75,24 +73,6 @@ namespace CuelloUterino
                 .WithRequired(e => e.Edades)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<EstudioSolicitado>()
-                .Property(e => e.descripcion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EstudioSolicitado>()
-                .HasMany(e => e.Informe)
-                .WithRequired(e => e.EstudioSolicitado)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Fechas>()
-                .Property(e => e.Descripcion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Fechas>()
-                .HasMany(e => e.Informe)
-                .WithRequired(e => e.Fechas)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Informe>()
                 .Property(e => e.Nombres)
                 .IsUnicode(false);
@@ -126,11 +106,15 @@ namespace CuelloUterino
                 .IsUnicode(false);
 
             modelBuilder.Entity<Informe>()
-                .Property(e => e.Telefono)
+                .Property(e => e.TelefonoCelularReferencia)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Informe>()
                 .Property(e => e.Recomendaciones)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Informe>()
+                .Property(e => e.TelefonoConvencionalReferencia)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Material>()

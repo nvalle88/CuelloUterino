@@ -1,4 +1,4 @@
-namespace CuelloUterino
+namespace CuelloUterino.ModeloDatos
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace CuelloUterino
         public int IdTipoHistologico { get; set; }
 
         [Required]
-        [StringLength(60)]
+        [StringLength(70)]
         public string Descripcion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,7 +1,8 @@
-namespace CuelloUterino
+namespace CuelloUterino.ModeloDatos
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -10,111 +11,131 @@ namespace CuelloUterino
     public partial class Informe
     {
         [Key]
-        [Display(Name = "Número de tamizaje")]
+        [DisplayName("Número")]
         public int IdInforme { get; set; }
 
         [Required]
-        [Display(Name ="Nombres * ")]
         [StringLength(60)]
+        [DisplayName("Nombres")]
         public string Nombres { get; set; }
 
         [Required]
-        [Display(Name = "Apellidos * ")]
         [StringLength(60)]
+        [DisplayName("Apellidos")]
         public string Apellidos { get; set; }
 
-        [Display(Name = "Edad * ")]
+        [DisplayName("Edad")]
         public int Edad { get; set; }
 
-        [Display(Name = "Fecha de la muestra * ")]
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayName("Fecha de la muestra")]
         public DateTime FechaMuestra { get; set; }
 
         [Required]
-        [Display(Name = "Identificación * ")]
         [StringLength(30)]
+        [DisplayName("Identificación")]
         public string Identificacion { get; set; }
 
-        [Display(Name = "História clínica * ")]
         public int HistoriaClinica { get; set; }
 
         [StringLength(12)]
-        [Display(Name = "Teléfono convencional * ")]
+        [DisplayName("Teléfono convencional")]
         public string TelefonoConvencional { get; set; }
 
         [StringLength(12)]
-        [Display(Name = "Teléfono celular * ")]
+        [DisplayName("Teléfono celular")]
         public string TelefonoCelular { get; set; }
 
+        [Required]
         [StringLength(60)]
-        [Display(Name = "Correo * ")]
+        [DisplayName("Correo")]
         public string Correo { get; set; }
 
         [Required]
         [StringLength(120)]
-        [Display(Name = "Nombres y apellidos * ")]
+        [DisplayName("Nombres y apellidos")]
         public string NombresApellidosReferencia { get; set; }
 
         [Required]
         [StringLength(15)]
-        [Display(Name = "Afinidad * ")]
+        [DisplayName("Afinidad")]
         public string GradoAfinidad { get; set; }
 
-        [Required]
         [StringLength(15)]
-        [Display(Name = "Teléfono * ")]
-        public string Telefono { get; set; }
-
-        [Display(Name = "Terapia hormonal * ")]
+        [DisplayName("Teléfono celular")]
+        public string TelefonoCelularReferencia { get; set; }
+        [DisplayName("¿ Terapia hormonal ?")]
         public bool TerapiaHormonal { get; set; }
 
         [Required]
-        [StringLength(150)]
-        [DataType(DataType.MultilineText)]
-        [Display(Name = "Recomendaciones * ")]
+        [StringLength(2000)]
+        [DisplayName("Recomendaciones")]
         public string Recomendaciones { get; set; }
 
-        [Display(Name = "Estudio * ")]
-        public int IdEstudio { get; set; }
-
-        [Display(Name = "Material * ")]
+        [DisplayName("Material")]
         public int IdMaterial { get; set; }
 
-        [Display(Name = "Anticoncepción * ")]
+        [DisplayName("Anticoncepción")]
         public int IdAnticoncepcion { get; set; }
 
-        [Display(Name = "Edades * ")]
+        [DisplayName("Edades")]
         public int IdEdades { get; set; }
 
-        [Display(Name = "Paridad * ")]
+        [DisplayName("Paridad")]
         public int IdParidad { get; set; }
 
-        [Display(Name = "Fechas * ")]
-        public int IdFechas { get; set; }
-
-        [Display(Name = "Diagnostico citológico * ")]
+        [DisplayName("Diagnostico citológico")]
         public int IdDiagnosticoCitologico { get; set; }
 
-        [Display(Name = "Valoración * ")]
+        [DisplayName("Valoración")]
         public int IdValoracion { get; set; }
 
-        [Display(Name = "Resultado prueba híbrida * ")]
+        [DisplayName("Resultado prueba híbrida")]
         public int IdResultadoPruebaHibrida { get; set; }
 
-        [Display(Name = "Muestra de la pieza * ")]
+        [DisplayName("Muestra")]
         public int IdMuestraPieza { get; set; }
 
-        [Display(Name = "Tipo histológico * ")]
+        [DisplayName("Tipo histológico")]
         public int IdTipoHistologico { get; set; }
+
+        [StringLength(12)]
+        [DisplayName("Teléfono convencional")]
+        public string TelefonoConvencionalReferencia { get; set; }
+
+        [DisplayName("¿ Citología/VPH ?")]
+        public bool CitologiaVPH { get; set; }
+
+        [DisplayName("¿ Histopatología ?")]
+        public bool Histopatologia { get; set; }
+
+        [DisplayName("¿ Coloscopía ?")]
+        public bool Coloscopia { get; set; }
+
+        [DisplayName("¿ Biopsia ?")]
+        public bool Biopsia { get; set; }
+
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayName("Última menstruación")]
+        public DateTime? UltimaMenstruacion { get; set; }
+
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayName("Último parto")]
+        public DateTime? UltimoParto { get; set; }
+
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayName("Última citología")]
+        public DateTime? UltimaCitologia { get; set; }
 
         public virtual Anticoncepcion Anticoncepcion { get; set; }
 
         public virtual DiagnosticoCitologico DiagnosticoCitologico { get; set; }
 
         public virtual Edades Edades { get; set; }
-
-        public virtual EstudioSolicitado EstudioSolicitado { get; set; }
-
-        public virtual Fechas Fechas { get; set; }
 
         public virtual Material Material { get; set; }
 
