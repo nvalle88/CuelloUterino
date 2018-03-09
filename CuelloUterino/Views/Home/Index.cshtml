@@ -1,153 +1,390 @@
 ﻿@model CuelloUterino.Models.AnaliticaViewModel
 <!-- MAIN CONTENT -->
 <div id="content">
+    <div class="row col col-lg-6">
+        <form method="post" novalidate="novalidate">
 
+
+            <section class="col col-lg-5">
+                <label>@Html.DisplayNameFor(model => model.FechaInicio)</label>
+                <label class="input">
+                    <input name="FechaInicio" value="@Model.FechaInicio" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                </label>
+            </section>
+
+            <section class="col col-lg-5">
+                <label>@Html.DisplayNameFor(model => model.FechaFin)</label>
+                <label class="input">
+                    <input name="FechaFin" value="@Model.FechaFin" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                </label>
+            </section>
+
+            <section class="col col-lg-2">
+                <label>&nbsp;</label>
+                <button type="submit" id="insertarMuestra" class="btn btn-primary">
+                    <i class="fa fa-search fa-lg"></i>
+                </button>
+            </section>
+        </form>
+    </div>
     <!-- widget grid -->
     <section id="widget-grid" class="">
-       
-            <!-- row -->
-            <div class="row">
-                <article class="col-sm-12">
-                    <!-- new widget -->
-                    <div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
 
-                        <header>
-                            <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
-                            <h2>MUESTRAS DE TAMIZAJES DE CÁNCER CÉRVICOUTERINO</h2>
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12">
+                <!-- new widget -->
+                <div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
 
-                            <ul class="nav nav-tabs pull-right in" id="myTab">
-                                <li class="active">
-                                    <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Analítica</span></a>
-                                </li>
-                            </ul>
+                    <header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+                        <h2></h2>
 
-                        </header>
+                        <ul class="nav nav-tabs pull-right in" id="myTab">
+                            <li class="active">
+                                <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">HPV/Diagnóstico citológico</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#s2"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">HPV/Tipo histológico</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#s3"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Diagnóstico citológico/Citologías cervicales realizadas</span></a>
+                            </li>
+                        </ul>
 
-                        <!-- widget div-->
-                        <div class="no-padding">
-                            <!-- widget edit box -->
-                            <div class="jarviswidget-editbox">
+                    </header>
 
-                                test
-                            </div>
-                            <!-- end widget edit box -->
+                    <!-- widget div-->
+                    <div class="no-padding">
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
 
-                            <div class="widget-body">
-                                <!-- content -->
-                                <div id="myTabContent" class="tab-content">
-                                    <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
-                                        <div class="row no-space">
-                                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-                                                    <span class="text"> Pruebas positivas <span class="pull-right">@Model.Positivo/@Model.Total</span> </span>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-color-green" style="width:@Model.PorcientoPositivo%; "></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-                                                    <span class="text"> Pruebas negativas <span class="pull-right">@Model.Negativo/@Model.Total</span> </span>
-                                                    <div class="progress">
-                                                        <div class="progress-bar  bg-color-red" style="width: @Model.PorcientoNegativo%;"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-                                                    <span class="text"> Pruebas indeterminadas<span class="pull-right">@Model.Indeterminado/@Model.Total</span> </span>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-color-blue" style="width: @Model.PorcientoIndeterminado%;"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-                                                    <span class="text"> Pruebas adecuadas<span class="pull-right">@Model.Adecuado/@Model.Total</span> </span>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-color-pink" style="width: @Model.PorcientoAdecuadas%;"></div>
-                                                    </div>
-                                                </div>
+                            test
+                        </div>
+                        <!-- end widget edit box -->
 
+                        <div class="widget-body">
+                            <!-- content -->
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.NegativoParaMalignidad" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.NegativoParaMalignidad</span>
                                             </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
-
-                                                <div class="row col col-lg-12">
-                                                    <form method="post"  novalidate="novalidate">
-                                                        <fieldset class="col-lg-12">
-                                                            <label>@Html.DisplayNameFor(model => model.FechaInicio)</label>
-                                                            <br />
-                                                            <label class="input">
-                                                                @Html.EditorFor(model => model.FechaInicio, new { htmlAttributes = new { @class = "form-control" } })
-                                                            </label>
-                                                        </fieldset>
-
-                                                        <fieldset class="col-lg-12">
-                                                            <label>@Html.DisplayNameFor(model => model.FechaFin)</label>
-                                                            <br />
-                                                            <label class="input">
-                                                                @Html.EditorFor(model => model.FechaFin, new { htmlAttributes = new { @class = "form-control" } })
-
-                                                            </label>
-                                                        </fieldset>
-
-                                                        <fieldset class="col-lg-12">
-                                                            <br />
-                                                            <button type="submit" id="insertarMuestra" class="btn btn-primary">
-                                                                <i class="fa fa-search fa-lg"></i>
-                                                            </button>
-                                                        </fieldset>
-                                                        </form>
-                                                </div>
-
+                                            <br />
+                                            <b> HPV/Negativo para malignidad</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.Adenocarcinoma" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.Adenocarcinoma </span>
                                             </div>
+                                            <br />
+                                            <b>HPV/Adenocarcinoma</b>
                                         </div>
 
-                                        <div class="show-stat-charts">
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-
-                                                <div class="easy-pie-chart txt-color-green" data-percent="@Model.PorcientoPositivo" data-pie-size="90">
-                                                    <span class="percent percent-sign">@Model.PorcientoPositivo</span>
-                                                </div>
-                                                <br />
-                                                <span class="easy-pie-title"><b> Positivo</b></span>
-
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.AGUS" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.AGUS </span>
                                             </div>
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                                                <div class="easy-pie-chart txt-color-red" data-percent="@Model.PorcientoNegativo" data-pie-size="90">
-                                                    <span class="percent percent-sign">@Model.PorcientoNegativo </span>
-                                                </div>
-                                                <br />
-                                                <span class="easy-pie-title"><b> Negativo</b></span>
-
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                                                <div class="easy-pie-chart txt-color-blue" data-percent="@Model.PorcientoIndeterminado" data-pie-size="90">
-                                                    <span class="percent percent-sign">@Model.PorcientoIndeterminado </span>
-                                                </div>
-                                                <br />
-                                                <span class="easy-pie-title"><b>Indeterminado</b> </span>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                                                <div class="easy-pie-chart txt-color-pink" data-percent="@Model.PorcientoAdecuadas" data-pie-size="90">
-                                                    <span class="percent percent-sign">@Model.PorcientoAdecuadas </span>
-                                                </div>
-                                                <br />
-                                                <span class="easy-pie-title"><b>Adecuadas</b></span>
-                                            </div>
+                                            <br />
+                                            <b>HPV/AGUS</b>
                                         </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.ASCH" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.ASCH </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/ASCH</b>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.ASCUS" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.ASCUS</span>
+                                            </div>
+                                            <br />
+                                            <b> HPV/ASCUS</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.CarcinomaInvasor" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.CarcinomaInvasor </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/Carcinoma invasor</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.Inflamacionleve" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.Inflamacionleve </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/Inflamación leve</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.InflamacionModerada" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.InflamacionModerada </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/Inflamación moderada</b>
+                                        </div>
+                                    </div>
+
+                                    <p>&nbsp;</p>
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.InflamacionSevera" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.InflamacionSevera</span>
+                                            </div>
+                                            <br />
+                                            <b> HPV/Inflamación severa</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.LIEAG" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.LIEAG </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/LIEAG</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.LIEBG" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.LIEBG </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/LIEBG</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.Otros" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.Otros </span>
+                                            </div>
+                                            <br />
+                                            <b>HPV/Otros</b>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+
+                                </div>
+                                <div class="tab-pane fade padding-10 no-padding-bottom" id="s2">
+                                    <div class="show-stat-charts">
+
+                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Adenocarcinoma tipo <span class="pull-right">@Model.AdenocarcinomaTipo %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-green" style="width:@Model.AdenocarcinomaTipo%; "></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Atipia coilocitica sin displasia <span class="pull-right">@Model.AtipiaCoilociticaSinDisplasia %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar  bg-color-red" style="width: @Model.AtipiaCoilociticaSinDisplasia%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Carcinoma escamoso<span class="pull-right">@Model.CarcinomaEscamoso %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-blue" style="width: @Model.CarcinomaEscamoso%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Cervicitis aguda<span class="pull-right">@Model.CervicitisAguda %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.CervicitisAguda%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Cervicitis crónica<span class="pull-right">@Model.CervicitisCronica %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.CervicitisCronica%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Sin realizar<span class="pull-right">@Model.SinRealizar %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.SinRealizar%;"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/CIS <span class="pull-right">@Model.CIS %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-green" style="width:@Model.CIS%; "></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Displasia glandular endocervical <span class="pull-right">@Model.DisplasiaGlandularEndocervical %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar  bg-color-red" style="width: @Model.DisplasiaGlandularEndocervical%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/NIC I<span class="pull-right">@Model.NICI %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-blue" style="width: @Model.NICI%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/NIC II<span class="pull-right">@Model.NICII %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.NICII%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/NIC III<span class="pull-right">@Model.NICIII %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.NICIII%;"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                <span class="text"> HPV/Otros tipo<span class="pull-right">@Model.OtrosTipo %</span> </span>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-color-pink" style="width: @Model.OtrosTipo%;"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
 
                                     </div>
 
                                 </div>
 
-                                <!-- end content -->
+                                <div class="tab-pane fade padding-10 no-padding-bottom" id="s3">
+
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.AdenocarcinomaCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.AdenocarcinomaCitologias</span>
+                                            </div>
+                                            <br />
+                                            <b> Adenocarcinoma citologías/Citologías cervicales</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.AGUSCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.AGUSCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>AGUS/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.ASCHCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.ASCHCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>ASCH/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.ASCUSCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.ASCUSCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>ASCUS/Citologías cervicales</b>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.CarcinomaInvasorCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.CarcinomaInvasorCitologias</span>
+                                            </div>
+                                            <br />
+                                            <b> Carcinoma invasor/Citologías cervicales</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.InflamacionleveCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.InflamacionleveCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>Inflamación leve/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.InflamacionModeradaCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.InflamacionModeradaCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>Inflamación moderada/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.InflamacionSeveraCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.InflamacionSeveraCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>Inflamación severa/Citologías cervicales</b>
+                                        </div>
+                                    </div>
+
+                                    <p>&nbsp;</p>
+
+                                    <div class="show-stat-charts">
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-green" data-percent="@Model.LIEAGCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.LIEAGCitologias</span>
+                                            </div>
+                                            <br />
+                                            <b>LIEAG/Citologías cervicales</b>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-red" data-percent="@Model.LIEBGCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.LIEBGCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>LIEBG/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-blue" data-percent="@Model.NegativoParaMalignidadCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.NegativoParaMalignidadCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>Negativo para malignidad/Citologías cervicales</b>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="text-align:center">
+                                            <div class="easy-pie-chart txt-color-pink" data-percent="@Model.OtrosCitologias" data-pie-size="130">
+                                                <span class="percent percent-sign">@Model.OtrosCitologias </span>
+                                            </div>
+                                            <br />
+                                            <b>Otros/Citologías cervicales</b>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+
+                                </div>
                             </div>
 
+                            <!-- end content -->
                         </div>
-                        <!-- end widget div -->
+
                     </div>
-                    <!-- end widget -->
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
 
-                </article>
-            </div>
+            </article>
+        </div>
 
-            <!-- end row -->
-        
+        <!-- end row -->
+
     </section>
     <!-- end widget grid -->
 
