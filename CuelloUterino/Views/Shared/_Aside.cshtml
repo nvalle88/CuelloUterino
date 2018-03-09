@@ -23,18 +23,27 @@
         -->
 
         <ul >
+
             <li class="@Html.RouteIf("Home", "active")">
                 <a href="#" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Home</span></a>
                 <ul>
-                    <li class="@Html.RouteIf("home", "active")">
-                        <a class="analiticamenu" href="@Url.Action("index", "home")" title="Analítica"><span class="menu-item-parent">Analítica</span></a>
-                    </li>
-                    <li class="@Html.RouteIf("Informes", "active")">
-                        <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent">Tamizaje</span></a>
-                    </li>
-                    <li class="@Html.RouteIf("Reporte", "active")">
-                        <a href="@Url.Action("Index", "Reporte")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
-                    </li>
+                    @if (User.IsInRole("Consulta"))
+    {
+                <li class="@Html.RouteIf("home", "active")">
+                    <a class="analiticamenu" href="@Url.Action("index", "home")" title="Analítica"><span class="menu-item-parent">Analítica</span></a>
+                </li>
+}
+                    @if (User.IsInRole("Administrador"))
+                    {
+                <li class="@Html.RouteIf("Informes", "active")">
+                    <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent">Tamizaje</span></a>
+                </li>
+                    }
+                @if (User.IsInRole("Consulta"))
+{
+                <li class="@Html.RouteIf("Reporte", "active")">
+                    <a href="@Url.Action("Index", "Reporte")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
+                </li>}
                 </ul>
             </li>
         </ul>

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace CuelloUterino.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Consulta")]
     public class HomeController : Controller
     {
         private Model db = new Model();

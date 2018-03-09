@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace CuelloUterino.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Administrador")]
     public class InformesController : Controller
     {
         private Model db = new Model();
