@@ -32,6 +32,11 @@ namespace CuelloUterino
             Constantes.Positivo = System.Configuration.ConfigurationManager.AppSettings["Positivo"];
             Constantes.Negativo = System.Configuration.ConfigurationManager.AppSettings["Negativo"];
             Constantes.Indeterminado = System.Configuration.ConfigurationManager.AppSettings["Indeterminado"];
+
+            Constantes.ServerReportUrl = System.Configuration.ConfigurationManager.AppSettings["ServerReportUrl"];
+            Constantes.ReporteCuelloPath = System.Configuration.ConfigurationManager.AppSettings["ReporteCuelloPath"];
+            Constantes.UsuarioReport = System.Configuration.ConfigurationManager.AppSettings["UsuarioReport"];
+            Constantes.Contrasena = System.Configuration.ConfigurationManager.AppSettings["Contrasena"];
         }
 
         private void CreatePermision(ApplicationDbContext db)

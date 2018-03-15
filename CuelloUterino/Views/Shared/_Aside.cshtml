@@ -41,8 +41,8 @@
                     }
                 @if (User.IsInRole("Consulta"))
 {
-                <li class="@Html.RouteIf("Reporte", "active")">
-                    <a href="@Url.Action("Index", "Reporte")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
+                <li class="@Html.RouteIf("Reports", "active")">
+                    <a href="@Url.Action("Report", "Reports")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
                 </li>}
                 </ul>
             </li>

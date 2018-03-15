@@ -10,6 +10,9 @@ using System.Web.Mvc;
 using CuelloUterino;
 using CuelloUterino.ModeloDatos;
 using System.Globalization;
+using Microsoft.Reporting.WebForms;
+using System.Web.UI.WebControls;
+using CuelloUterino.Models;
 
 namespace CuelloUterino.Controllers
 {
@@ -18,6 +21,9 @@ namespace CuelloUterino.Controllers
     {
         private Model db = new Model();
 
+
+
+       
         // GET: Informes
         public async Task<ActionResult> Index()
         {
