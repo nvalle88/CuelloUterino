@@ -242,7 +242,7 @@
     <Compile Include="Models\Credenciales.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ReportsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utiles\Constantes.cs" />
@@ -560,6 +560,7 @@
     <Content Include="Content\img\sa-default.png" />
     <Content Include="Content\img\saturation.png" />
     <Content Include="Content\img\select2-spinner.gif" />
+    <Content Include="Content\img\simed.png" />
     <Content Include="Content\img\sort_asc.png" />
     <Content Include="Content\img\sort_asc_disabled.png" />
     <Content Include="Content\img\sort_both.png" />

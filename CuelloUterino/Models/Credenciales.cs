@@ -14,7 +14,6 @@ namespace CuelloUterino.Models
         // local variable for network credential.
         private string _UserName;
         private string _PassWord;
-        private string _DomainName;
         public CustomReportCredentials(string UserName, string PassWord)
         {
             _UserName = UserName;
@@ -34,7 +33,7 @@ namespace CuelloUterino.Models
             {
 
                 // use NetworkCredentials
-                return new NetworkCredential(_UserName, _PassWord, _DomainName);
+                return new NetworkCredential(_UserName, _PassWord);
             }
         }
         public bool GetFormsCredentials(out Cookie authCookie, out string user, out string password, out string authority)

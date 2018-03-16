@@ -25,8 +25,8 @@ namespace CuelloUterino.Controllers
             {
                  lista = lista.OrderBy(x => x.FechaMuestra).ToList();
 
-                var fechaInicio = lista.FirstOrDefault().FechaMuestra;
-                var fechaFin = lista.LastOrDefault().FechaMuestra;
+                var fechaInicio = analiticaViewModel.FechaInicio;
+                var fechaFin = analiticaViewModel.FechaFin;
 
 
                 double HPVTotal = lista.Where(x => x.ResultadoPruebaHibrida.Descripcion == Constantes.Positivo).ToList().Count;
