@@ -25,6 +25,7 @@ namespace CuelloUterino.Models
             rptViewer.Height = Unit.Percentage(100);
             rptViewer.AsyncRendering = true;
 
+
             IReportServerCredentials irsc = new CustomReportCredentials(Constantes.UsuarioReport, Constantes.Contrasena);
 
             rptViewer.ServerReport.ReportServerCredentials = irsc;

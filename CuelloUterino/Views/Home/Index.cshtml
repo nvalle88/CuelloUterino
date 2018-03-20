@@ -8,14 +8,14 @@
             <section class="col col-lg-5">
                 <label>@Html.DisplayNameFor(model => model.FechaInicio)</label>
                 <label class="input">
-                    <input name="FechaInicio" value="@Model.FechaInicio" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                    <input name="FechaInicio" value="@Model.FechaInicio.ToShortDateString()" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
                 </label>
             </section>
 
             <section class="col col-lg-5">
                 <label>@Html.DisplayNameFor(model => model.FechaFin)</label>
                 <label class="input">
-                    <input name="FechaFin" value="@Model.FechaFin" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                    <input name="FechaFin" value="@Model.FechaFin.ToShortDateString()" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
                 </label>
             </section>
 

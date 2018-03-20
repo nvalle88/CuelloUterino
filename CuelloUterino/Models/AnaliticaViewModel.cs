@@ -16,7 +16,7 @@ namespace CuelloUterino.Models
 
         [DisplayName("Fecha final")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = false, DataFormatString = "{0:dd/mm/yyyy}")]
         public DateTime FechaFin { get; set; }
 
 
