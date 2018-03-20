@@ -1,4 +1,5 @@
-﻿using CuelloUterino.Utiles;
+﻿using CuelloUterino.Models;
+using CuelloUterino.Utiles;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 
-namespace CuelloUterino.Models
+namespace CuelloUterino.Controllers
 {
     public class ReportsController : Controller
     {

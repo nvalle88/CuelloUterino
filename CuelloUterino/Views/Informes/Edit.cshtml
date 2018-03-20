@@ -63,7 +63,7 @@
                                             <section class="col col-2">
                                                 <label>@Html.DisplayNameFor(model => model.FechaMuestra)</label>
                                                 <label class="input">
-                                                    <input name="FechaMuestra" value="@Model.FechaMuestra" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input name="FechaMuestra" value="@Model.FechaMuestra.ToShortDateString()" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
                                                     @Html.ValidationMessageFor(model => model.FechaMuestra, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
@@ -522,7 +522,7 @@ else
                     },
                     Correo: {
                         required: "",
-                        email: "Formato de corro INVÁLIDO"
+                        email: "Formato de correo INVÁLIDO"
                     },
                     Edad: {
                         required: ""

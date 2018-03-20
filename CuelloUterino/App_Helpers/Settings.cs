@@ -23,12 +23,12 @@ namespace SmartAdminMvc
         /// <summary>
         ///     Retrieves the entry value for the following composed key: "config:Company" as a string.
         /// </summary>
-        public static readonly string Company = GetValue<string>("Company");
+        public static readonly string Company = GetValue<string>("SIMED");
 
         /// <summary>
         ///     Retrieves the entry value for the following composed key: "config:Project" as a string.
         /// </summary>
-        public static readonly string Project = GetValue<string>("Project");
+        public static readonly string Project = GetValue<string>("Cancer Cervicouterino");
 
         /// <summary>
         ///     Retrieves the entry value for the following composed key: "config:EnableTiles" as a boolean.
