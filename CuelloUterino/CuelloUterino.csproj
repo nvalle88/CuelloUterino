@@ -232,7 +232,6 @@
     <Compile Include="ModeloDatos\Material.cs" />
     <Compile Include="ModeloDatos\Model.cs" />
     <Compile Include="ModeloDatos\MuestraPieza.cs" />
-    <Compile Include="ModeloDatos\Paridad.cs" />
     <Compile Include="ModeloDatos\ResultadoPruebaHibrida.cs" />
     <Compile Include="ModeloDatos\sysdiagrams.cs" />
     <Compile Include="ModeloDatos\TipoHistologico.cs" />
@@ -1214,8 +1213,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Informes\Create.cshtml" />
-    <Content Include="Views\Informes\Delete.cshtml" />
-    <Content Include="Views\Informes\Details.cshtml" />
     <Content Include="Views\Informes\Edit.cshtml" />
     <Content Include="Views\Informes\Index.cshtml" />
     <Content Include="Scripts\libs\jquery-2.1.1.min.map" />

@@ -37,7 +37,8 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("Identificación")]
         public string Identificacion { get; set; }
 
-        public int HistoriaClinica { get; set; }
+        [DisplayName("Historia clínica")]
+        public int? HistoriaClinica { get; set; }
 
         [StringLength(12)]
         [DisplayName("Teléfono convencional")]
@@ -47,17 +48,14 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("Teléfono celular")]
         public string TelefonoCelular { get; set; }
 
-        [Required]
         [StringLength(60)]
         [DisplayName("Correo")]
         public string Correo { get; set; }
 
-        [Required]
         [StringLength(120)]
         [DisplayName("Nombres y apellidos")]
         public string NombresApellidosReferencia { get; set; }
 
-        [Required]
         [StringLength(15)]
         [DisplayName("Afinidad")]
         public string GradoAfinidad { get; set; }
@@ -65,6 +63,7 @@ namespace CuelloUterino.ModeloDatos
         [StringLength(15)]
         [DisplayName("Teléfono celular")]
         public string TelefonoCelularReferencia { get; set; }
+
         [DisplayName("¿ Terapia hormonal ?")]
         public bool TerapiaHormonal { get; set; }
 
@@ -81,9 +80,6 @@ namespace CuelloUterino.ModeloDatos
 
         [DisplayName("Edades")]
         public int IdEdades { get; set; }
-
-        [DisplayName("Paridad")]
-        public int IdParidad { get; set; }
 
         [DisplayName("Diagnostico citológico")]
         public int IdDiagnosticoCitologico { get; set; }
@@ -116,20 +112,37 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("¿ Biopsia ?")]
         public bool Biopsia { get; set; }
 
-        [Column(TypeName = "date")]
-        [DataType(DataType.Date)]
+
         [DisplayName("Última menstruación")]
-        public DateTime? UltimaMenstruacion { get; set; }
+        public string UltimaMenstruacion { get; set; }
 
-        [Column(TypeName = "date")]
-        [DataType(DataType.Date)]
+
         [DisplayName("Último parto")]
-        public DateTime? UltimoParto { get; set; }
+        public string UltimoParto { get; set; }
 
-        [Column(TypeName = "date")]
-        [DataType(DataType.Date)]
         [DisplayName("Última citología")]
-        public DateTime? UltimaCitologia { get; set; }
+        public string UltimaCitologia { get; set; }
+
+        [DisplayName("# Partos")]
+        public string NumeroPartos { get; set; }
+
+        [DisplayName("# Abortos")]
+        public string NumeroAbortos { get; set; }
+
+        [DisplayName("# Gestaciones")]
+        public string NumeroGestaciones { get; set; }
+
+        [DisplayName("# Cesáreas")]
+        public string NumeroCesareas { get; set; }
+
+        [DisplayName("Otro material")]
+        public string OtroMaterial { get; set; }
+
+        [DisplayName("Otro anticoncepción")]
+        public string OtroAnticoncepcion { get; set; }
+
+        [DisplayName("Otro edades")]
+        public string OtroEdades { get; set; }
 
         public virtual Anticoncepcion Anticoncepcion { get; set; }
 
@@ -140,8 +153,6 @@ namespace CuelloUterino.ModeloDatos
         public virtual Material Material { get; set; }
 
         public virtual MuestraPieza MuestraPieza { get; set; }
-
-        public virtual Paridad Paridad { get; set; }
 
         public virtual ResultadoPruebaHibrida ResultadoPruebaHibrida { get; set; }
 

@@ -29,21 +29,4 @@
         </div>
     </form>
 </body>
-
-    <script>
-
-        function setBody() {
-
-
-            var a = screen.width - (18 * screen.width)/100 ;
-            var b = 300;
-
-            document.getElementById("idBody").style.width = a + "px";
-            document.getElementById("idBody").style.height = b + "px";
-            
-        }
-
-
-        setBody();
-    </script>
 </html>

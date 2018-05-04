@@ -27,7 +27,7 @@ namespace CuelloUterino.Controllers
         // GET: Informes
         public async Task<ActionResult> Index()
         {
-            var informe = db.Informe.Include(i => i.Anticoncepcion).Include(i => i.DiagnosticoCitologico).Include(i => i.Edades).Include(i => i.Material).Include(i => i.MuestraPieza).Include(i => i.Paridad).Include(i => i.ResultadoPruebaHibrida).Include(i => i.TipoHistologico).Include(i => i.TipoHistologico1).Include(i => i.Valoracion);
+            var informe = db.Informe.Include(i => i.Anticoncepcion).Include(i => i.DiagnosticoCitologico).Include(i => i.Edades).Include(i => i.Material).Include(i => i.MuestraPieza).Include(i => i.ResultadoPruebaHibrida).Include(i => i.TipoHistologico).Include(i => i.TipoHistologico1).Include(i => i.Valoracion);
             return View(await informe.ToListAsync());
         }
 
@@ -54,7 +54,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion");
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion");
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion");
-            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion");
+            //ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion");
             ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion");
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion");
@@ -82,7 +82,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
-            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+            //ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
             ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
@@ -107,7 +107,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
-            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+            //ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
             ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
@@ -134,7 +134,7 @@ namespace CuelloUterino.Controllers
             ViewBag.IdEdades = new SelectList(db.Edades, "IdEdades", "Descripcion", informe.IdEdades);
             ViewBag.IdMaterial = new SelectList(db.Material, "IdMaterial", "Descripcion", informe.IdMaterial);
             ViewBag.IdMuestraPieza = new SelectList(db.MuestraPieza, "IdMuestraPieza", "Descripcion", informe.IdMuestraPieza);
-            ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
+           // ViewBag.IdParidad = new SelectList(db.Paridad, "IdParidad", "Descripcion", informe.IdParidad);
             ViewBag.IdResultadoPruebaHibrida = new SelectList(db.ResultadoPruebaHibrida, "IdResultadoPruebaHibrida", "Descripcion", informe.IdResultadoPruebaHibrida);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);
             ViewBag.IdTipoHistologico = new SelectList(db.TipoHistologico, "IdTipoHistologico", "Descripcion", informe.IdTipoHistologico);

@@ -23,7 +23,7 @@ namespace CuelloUterino.ModeloDatos
         public virtual DbSet<Informe> Informe { get; set; }
         public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<MuestraPieza> MuestraPieza { get; set; }
-        public virtual DbSet<Paridad> Paridad { get; set; }
+        //public virtual DbSet<Paridad> Paridad { get; set; }
         public virtual DbSet<ResultadoPruebaHibrida> ResultadoPruebaHibrida { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TipoHistologico> TipoHistologico { get; set; }
@@ -135,14 +135,14 @@ namespace CuelloUterino.ModeloDatos
                 .WithRequired(e => e.MuestraPieza)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Paridad>()
-                .Property(e => e.Descripcion)
-                .IsUnicode(false);
+            //modelBuilder.Entity<Paridad>()
+            //    .Property(e => e.Descripcion)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<Paridad>()
-                .HasMany(e => e.Informe)
-                .WithRequired(e => e.Paridad)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Paridad>()
+            //    .HasMany(e => e.Informe)
+            //    .WithRequired(e => e.Paridad)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ResultadoPruebaHibrida>()
                 .Property(e => e.Descripcion)

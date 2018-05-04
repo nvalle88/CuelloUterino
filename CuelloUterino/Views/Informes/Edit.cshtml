@@ -112,44 +112,51 @@
                                             <section class="col col-3">
                                                 <label>@Html.DisplayNameFor(model => model.CitologiaVPH)</label>
                                                 @if (Model.CitologiaVPH)
-                {
-                                <label class="checkbox">
-                                    <input type="checkbox" name="CitologiaVPH" value="true" checked="checked">
-                                    <input type="hidden" name="CitologiaVPH" value="false" />
-                                    <i></i>
-                                </label>
-}
-else
-{
-                                <label class="checkbox">
-                                    <input type="checkbox" name="CitologiaVPH" value="true">
-                                    <input type="hidden" name="CitologiaVPH" value="false" checked="checked" />
-                                    <i></i>
-                                </label>
-}
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="CitologiaVPH" value="true" checked="checked">
+                                                        <input type="hidden" name="CitologiaVPH" value="false" />
+                                                        <i></i>
+                                                    </label>
+                                                }
+                                                else
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="CitologiaVPH" value="true">
+                                                        <input type="hidden" name="CitologiaVPH" value="false" checked="checked" />
+                                                        <i></i>
+                                                    </label>
+                                                }
                                             </section>
                                             <section class="col col-3">
                                                 <label>@Html.DisplayNameFor(model => model.Histopatologia)</label>
                                                 @if (Model.Histopatologia)
-                {
-                                <label class="checkbox">
-                                    <input type="checkbox" name="Histopatologia" value="true" checked="checked">
-                                    <input type="hidden" name="Histopatologia" value="false" />
-                                    <i></i>
-                                </label>
-}
-else
-{
-                                <label class="checkbox">
-                                    <input type="checkbox" name="Histopatologia" value="true">
-                                    <input type="hidden" name="Histopatologia" value="false" checked="checked" />
-                                    <i></i>
-                                </label>
-}
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Histopatologia" value="true" checked="checked">
+                                                        <input type="hidden" name="Histopatologia" value="false" />
+                                                        <i></i>
+                                                    </label>
+                                                }
+                                                else
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Histopatologia" value="true">
+                                                        <input type="hidden" name="Histopatologia" value="false" checked="checked" />
+                                                        <i></i>
+                                                    </label>
+                                                }
 
                                             </section>
-
-
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
+                                                <label class="input">
+                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
                                         </div>
                                     </article>
                                     <br />
@@ -194,79 +201,128 @@ else
                                         <legend>Datos básicos para citología vaginal</legend>
                                         <br />
                                         <div class="row">
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdMaterial)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdMaterial", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdMaterial, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
-                                                <label>@Html.DisplayNameFor(model => model.IdParidad)</label>
+                                            <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroMaterial)</label>
                                                 <label class="input">
-                                                    @Html.DropDownList("IdParidad", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.IdParidad, "", new { @class = "text-danger" })
+                                                    <input maxlength="200" name="OtroMaterial" value="@Model.OtroMaterial" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroMaterial, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
-
-                                            <section class="col col-3">
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdAnticoncepcion)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdAnticoncepcion", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdAnticoncepcion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroAnticoncepcion)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="OtroAnticoncepcion" value="@Model.OtroAnticoncepcion" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroAnticoncepcion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-4">
                                                 <label>@Html.DisplayNameFor(model => model.IdEdades)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdEdades", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdEdades, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
+                                            <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroEdades)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="OtroEdades" value="@Model.OtroEdades" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroEdades, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
                                         </div>
                                         <div class="row">
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroPartos)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroPartos" value="@Model.NumeroPartos" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroPartos, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroAbortos)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroAbortos" value="@Model.NumeroAbortos" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroAbortos, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroGestaciones)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroGestaciones" value="@Model.NumeroGestaciones" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroGestaciones, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroCesareas)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroCesareas" value="@Model.NumeroCesareas" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroCesareas, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
 
+                                        <div class="row">
 
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.UltimaMenstruacion)</label>
                                                 <label class="input">
-                                                    <input name="UltimaMenstruacion" value="@Model.UltimaMenstruacion" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimaMenstruacion" value="@Model.UltimaMenstruacion" class="form-control" />
                                                     @Html.ValidationMessageFor(model => model.UltimaMenstruacion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.UltimaCitologia)</label>
                                                 <label class="input">
-                                                    <input name="UltimaCitologia" value="@Model.UltimaCitologia" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimaCitologia" value="@Model.UltimaCitologia" class="form-control" />
                                                     @Html.ValidationMessageFor(model => model.UltimaCitologia, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-9">
                                                 <label>@Html.DisplayNameFor(model => model.UltimoParto)</label>
                                                 <label class="input">
-                                                    <input name="UltimoParto" value="@Model.UltimoParto" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimoParto" value="@Model.UltimoParto" class="form-control" />
                                                     @Html.ValidationMessageFor(model => model.UltimoParto, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
                                             <section class="col col-3">
                                                 <label>@Html.DisplayNameFor(model => model.TerapiaHormonal)</label>
                                                 @if (Model.TerapiaHormonal)
-                {
-                                <label class="checkbox">
-                                    <input type="checkbox" name="TerapiaHormonal" value="true" checked="checked">
-                                    <input type="hidden" name="TerapiaHormonal" value="false" />
-                                    <i></i>
-                                </label>
+            {
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="TerapiaHormonal" value="true" checked="checked">
+                                        <input type="hidden" name="TerapiaHormonal" value="false" />
+                                        <i></i>
+                                    </label>
 }
 else
 {
-                                <label class="checkbox">
-                                    <input type="checkbox" name="TerapiaHormonal" value="true">
-                                    <input type="hidden" name="TerapiaHormonal" value="false" checked="checked" />
-                                    <i></i>
-                                </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="TerapiaHormonal" value="true">
+                                        <input type="hidden" name="TerapiaHormonal" value="false" checked="checked" />
+                                        <i></i>
+                                    </label>
 
 }
                                             </section>
@@ -287,23 +343,13 @@ else
                                         <legend>Informe de captura híbrida para el Virus del Papiloma Humano (VPH)</legend>
                                         <br />
                                         <div class="row">
-
-                                            <section class="col col-6">
-                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
-                                                <label class="input">
-                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
-                                                </label>
-                                            </section>
-
-                                            <section class="col col-6">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdResultadoPruebaHibrida)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdResultadoPruebaHibrida", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdResultadoPruebaHibrida, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
                                         </div>
                                         <fieldset>
                                             <div class="row">
@@ -327,41 +373,41 @@ else
 
                                                 <label>@Html.DisplayNameFor(model => model.Coloscopia)</label>
                                                 @if (Model.Coloscopia)
-    {
-                                            <label class="checkbox">
-                                                <input type="checkbox" name="Coloscopia" value="true" checked="checked">
-                                                <input type="hidden" name="Coloscopia" value="false" />
-                                                <i></i>
-                                            </label>
-}
-else
-{
-                                            <label class="checkbox">
-                                                <input type="checkbox" name="Coloscopia" value="true" >
-                                                <input type="hidden" name="Coloscopia" value="false" checked="checked" />
-                                                <i></i>
-                                            </label>
-}
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Coloscopia" value="true" checked="checked">
+                                                        <input type="hidden" name="Coloscopia" value="false" />
+                                                        <i></i>
+                                                    </label>
+                                                }
+                                                else
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Coloscopia" value="true">
+                                                        <input type="hidden" name="Coloscopia" value="false" checked="checked" />
+                                                        <i></i>
+                                                    </label>
+                                                }
 
                                             </section>
                                             <section class="col col-6">
                                                 <label>@Html.DisplayNameFor(model => model.Biopsia)</label>
                                                 @if (Model.Biopsia)
-    {
-                                            <label class="checkbox">
-                                                <input type="checkbox" name="Biopsia" value="true" checked="checked">
-                                                <input type="hidden" name="Biopsia" value="false"  />
-                                                <i></i>
-                                            </label>
-}
-else
-{
-                                            <label class="checkbox">
-                                                <input type="checkbox" name="Biopsia" value="true">
-                                                <input type="hidden" name="Biopsia" value="false" checked="checked" />
-                                                <i></i>
-                                            </label>
-}
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Biopsia" value="true" checked="checked">
+                                                        <input type="hidden" name="Biopsia" value="false" />
+                                                        <i></i>
+                                                    </label>
+                                                }
+                                                else
+                                                {
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" name="Biopsia" value="true">
+                                                        <input type="hidden" name="Biopsia" value="false" checked="checked" />
+                                                        <i></i>
+                                                    </label>
+                                                }
                                             </section>
 
 
@@ -435,7 +481,6 @@ else
                         required: true
                     },
                     Correo: {
-                        required: true,
                         email: true
                     },
                     Edad: {
@@ -448,34 +493,12 @@ else
                         required: true,
                         digits: true
                     },
-                    HistoriaClinica: {
-                        required: true,
 
-                    },
-                    TelefonoConvencional: {
-                        required: true
-                    },
-                    TelefonoCelular: {
-                        required: true
-                    },
-                    NombresApellidosReferencia: {
-                        required: true
-
-                    },
-                    GradoAfinidad: {
-                        required: true,
-                    },
-                    Telefono: {
-                        required: true
-                    },
                     IdEstudio: {
                         required: true
                     },
 
                     IdMaterial: {
-                        required: true
-                    },
-                    TerapiaHormonal: {
                         required: true
                     },
                     IdAnticoncepcion: {
@@ -521,7 +544,6 @@ else
                         required: ""
                     },
                     Correo: {
-                        required: "",
                         email: "Formato de correo INVÁLIDO"
                     },
                     Edad: {
@@ -532,10 +554,6 @@ else
                     },
                     Identificacion: {
                         required: ""
-                    },
-                    HistoriaClinica: {
-                        required: ""
-
                     },
                     TelefonoConvencional: {
                         required: ""

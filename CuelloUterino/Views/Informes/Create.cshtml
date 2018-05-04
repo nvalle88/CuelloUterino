@@ -99,14 +99,10 @@
                                             <section class="col col-3">
                                                 <label>@Html.DisplayNameFor(model => model.Correo)</label>
                                                 <label class="input">
-
                                                     <input maxlength="60" name="Correo" class="form-control" />
                                                     @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
-
-
                                         </div>
 
                                         <div class="row">
@@ -140,6 +136,15 @@
                                                     <input type="checkbox" name="Histopatologia" value="true" >
                                                     <input type="hidden" name="Histopatologia" value="false" checked="checked" />
                                                     <i></i>
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
+                                                <label class="input">
+                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
                                         </div>
@@ -188,60 +193,106 @@
                                         <legend>Datos básicos para citología vaginal</legend>
                                         <br />
                                         <div class="row">
-
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdMaterial)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdMaterial", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdMaterial, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
-                                                <label>@Html.DisplayNameFor(model => model.IdParidad)</label>
+                                            <section id="otroMaterialText" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroMaterial)</label>
                                                 <label class="input">
-                                                    @Html.DropDownList("IdParidad", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.IdParidad, "", new { @class = "text-danger" })
+                                                    <input maxlength="200" name="OtroMaterial" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroMaterial, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
-
-                                            <section class="col col-3">
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdAnticoncepcion)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdAnticoncepcion", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdAnticoncepcion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
-                                            <section class="col col-3">
+                                            <section id="otroAnticoncepcionText" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroAnticoncepcion)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="OtroAnticoncepcion" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroAnticoncepcion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdEdades)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdEdades", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdEdades, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
+                                            <section  id="otroEdadesText" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroEdades)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="OtroEdades" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroEdades, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
                                         </div>
                                         <div class="row">
-
-
-                                            <section class="col col-3">
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroPartos)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroPartos" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroPartos, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroAbortos)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroAbortos" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroAbortos, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroGestaciones)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroGestaciones" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroGestaciones, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section class="col col-6">
+                                                <label>@Html.DisplayNameFor(model => model.NumeroCesareas)</label>
+                                                <label class="input">
+                                                    <input maxlength="50" name="NumeroCesareas" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.NumeroCesareas, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.UltimaMenstruacion)</label>
                                                 <label class="input">
-                                                    <input name="UltimaMenstruacion" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimaMenstruacion" class="form-control " />
                                                     @Html.ValidationMessageFor(model => model.UltimaMenstruacion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.UltimaCitologia)</label>
                                                 <label class="input">
-                                                    <input name="UltimaCitologia" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimaCitologia" class="form-control " />
                                                     @Html.ValidationMessageFor(model => model.UltimaCitologia, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-3">
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-9">
                                                 <label>@Html.DisplayNameFor(model => model.UltimoParto)</label>
                                                 <label class="input">
-                                                    <input name="UltimoParto" readonly="readonly" class="form-control datepicker" data-dateformat='dd/mm/yy' />
+                                                    <input maxlength="200" name="UltimoParto"  class="form-control"  />
                                                     @Html.ValidationMessageFor(model => model.UltimoParto, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
@@ -270,23 +321,13 @@
                                         <legend>Informe de captura híbrida para el Virus del Papiloma Humano (VPH)</legend>
                                         <br />
                                         <div class="row">
-
-                                            <section class="col col-6">
-                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
-                                                <label class="input">
-                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
-                                                </label>
-                                            </section>
-
-                                            <section class="col col-6">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdResultadoPruebaHibrida)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdResultadoPruebaHibrida", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdResultadoPruebaHibrida, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-
                                         </div>
                                         <fieldset>
                                             <div class="row">
@@ -386,10 +427,41 @@
 
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-       
+        $("#IdMaterial").change(function () {
+            var b = $("#IdMaterial").val();
+            if (!(b === "6")) {
+                $('#otroMaterialText').hide();
+            } else {
+                $('#otroMaterialText').show();
+            }
+
+        });
+
+        $("#IdAnticoncepcion").change(function () {
+            var b = $("#IdAnticoncepcion").val();
+            if (!(b === "4")) {
+                $('#otroAnticoncepcionText').hide();
+            } else {
+                $('#otroAnticoncepcionText').show();
+            }
+
+        });
+
+        $("#IdEdades").change(function () {
+            var b = $("#IdEdades").val();
+            if (!(b === "4")) {
+                $('#otroEdadesText').hide();
+            } else {
+                $('#otroEdadesText').show();
+            }
+
+        });
 
 
         $(document).ready(function () {
+            $('#otroMaterialText').hide();
+            $('#otroAnticoncepcionText').hide();
+            $('#otroEdadesText').hide();
             
             var $checkoutForm = $('#checkout-form').validate({
                 // Rules for form validation
@@ -401,7 +473,6 @@
                         required: true
                     },
                     Correo: {
-                        required: true,
                         email: true
                     },
                     Edad: {
@@ -414,26 +485,7 @@
                         required: true,
                         digits: true
                     },
-                    HistoriaClinica: {
-                        required: true,
 
-                    },
-                    TelefonoConvencional: {
-                        required: true
-                    },
-                    TelefonoCelular: {
-                        required: true
-                    },
-                    NombresApellidosReferencia: {
-                        required: true
-
-                    },
-                    GradoAfinidad: {
-                        required: true
-                    },
-                    Telefono: {
-                        required: true
-                    },
                     IdEstudio: {
                         required: true
                     },
@@ -445,9 +497,6 @@
                         required: true
                     },
                     IdEdades: {
-                        required: true
-                    },
-                    IdParidad: {
                         required: true
                     },
                     IdFechas: {
@@ -484,7 +533,6 @@
                         required: ""
                     },
                     Correo: {
-                        required: "",
                         email: "Formato de correo INVÁLIDO"
                     },
                     Edad: {
@@ -496,19 +544,11 @@
                     Identificacion: {
                         required: ""
                     },
-                    HistoriaClinica: {
-                        required: ""
-
-                    },
                     TelefonoConvencional: {
                         required: ""
                     },
                     TelefonoCelular: {
                         required: ""
-                    },
-                    NombresApellidosReferencia: {
-                        required: ""
-
                     },
                     GradoAfinidad: {
                         required: ""
@@ -530,9 +570,6 @@
                         required: ""
                     },
                     IdEdades: {
-                        required: ""
-                    },
-                    IdParidad: {
                         required: ""
                     },
                     IdFechas: {
