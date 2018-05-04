@@ -208,7 +208,7 @@
                                                     @Html.ValidationMessageFor(model => model.IdMaterial, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-lg-12">
+                                            <section id="otroMaterialText" class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.OtroMaterial)</label>
                                                 <label class="input">
                                                     <input maxlength="200" name="OtroMaterial" value="@Model.OtroMaterial" class="form-control" />
@@ -217,14 +217,14 @@
                                             </section>
                                         </div>
                                         <div class="row">
-                                            <section class="col col-lg-12">
+                                            <section  class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdAnticoncepcion)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdAnticoncepcion", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdAnticoncepcion, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-lg-12">
+                                            <section  id="otroAnticoncepcionText"  class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.OtroAnticoncepcion)</label>
                                                 <label class="input">
                                                     <input maxlength="200" name="OtroAnticoncepcion" value="@Model.OtroAnticoncepcion" class="form-control" />
@@ -233,14 +233,14 @@
                                             </section>
                                         </div>
                                         <div class="row">
-                                            <section class="col col-4">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdEdades)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdEdades", null, htmlAttributes: new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.IdEdades, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
-                                            <section class="col col-lg-12">
+                                            <section id="otroEdadesText" class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.OtroEdades)</label>
                                                 <label class="input">
                                                     <input maxlength="200" name="OtroEdades" value="@Model.OtroEdades" class="form-control" />
@@ -449,10 +449,64 @@ else
     </section>
 </div>
 @section pagespecific {
-    @Scripts.Render("~/bundles/jqueryval")
+    
+
 
     <script type="text/javascript">
+
+        $("#IdMaterial").change(function () {
+            var b = $("#IdMaterial").val();
+            if (!(b === "6")) {
+                $('#otroMaterialText').hide();
+            } else {
+                $('#otroMaterialText').show();
+            }
+
+        });
+
+        $("#IdAnticoncepcion").change(function () {
+            var b = $("#IdAnticoncepcion").val();
+            if (!(b === "4")) {
+                $('#otroAnticoncepcionText').hide();
+            } else {
+                $('#otroAnticoncepcionText').show();
+            }
+
+        });
+
+        $("#IdEdades").change(function () {
+            var b = $("#IdEdades").val();
+            if (!(b === "4")) {
+                $('#otroEdadesText').hide();
+            } else {
+                $('#otroEdadesText').show();
+            }
+
+        });
+
+
         $(document).ready(function () {
+
+            var b = $("#IdMaterial").val();
+            if (!(b === "6")) {
+                $('#otroMaterialText').hide();
+            } else {
+                $('#otroMaterialText').show();
+            }
+
+            var b = $("#IdAnticoncepcion").val();
+            if (!(b === "4")) {
+                $('#otroAnticoncepcionText').hide();
+            } else {
+                $('#otroAnticoncepcionText').show();
+            }
+
+            var b = $("#IdEdades").val();
+            if (!(b === "4")) {
+                $('#otroEdadesText').hide();
+            } else {
+                $('#otroEdadesText').show();
+            }
 
             $("#regresar1").click(function () {
                 $('#content').waitMe({
@@ -523,9 +577,7 @@ else
                     IdResultadoPruebaHibrida: {
                         required: true
                     },
-                    Recomendaciones: {
-                        required: true
-                    },
+
                     IdMuestraPieza: {
                         required: true
                     },
@@ -601,9 +653,6 @@ else
                         required: ""
                     },
                     IdResultadoPruebaHibrida: {
-                        required: ""
-                    },
-                    Recomendaciones: {
                         required: ""
                     },
                     IdMuestraPieza: {

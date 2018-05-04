@@ -67,7 +67,6 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("¿ Terapia hormonal ?")]
         public bool TerapiaHormonal { get; set; }
 
-        [Required]
         [StringLength(2000)]
         [DisplayName("Recomendaciones")]
         public string Recomendaciones { get; set; }
