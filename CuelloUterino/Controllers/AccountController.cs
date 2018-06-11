@@ -91,6 +91,11 @@ namespace CuelloUterino.Controllers
             }
         }
 
+        public async Task<ActionResult> Error()
+        {
+            return View();
+        }
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

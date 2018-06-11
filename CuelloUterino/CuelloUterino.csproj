@@ -1249,6 +1249,15 @@
     <Content Include="Scripts\libs\waitMe\README.md" />
     <Content Include="Views\Reports\Report.cshtml" />
     <Content Include="Views\Reports.cshtml" />
+    <Content Include="Views\Misc\Blank.cshtml" />
+    <Content Include="Views\Misc\CKEditor.cshtml" />
+    <Content Include="Views\Misc\EmailTemplate.cshtml" />
+    <Content Include="Views\Misc\Error404.cshtml" />
+    <Content Include="Views\Misc\Error500.cshtml" />
+    <Content Include="Views\Misc\Invoice.cshtml" />
+    <Content Include="Views\Misc\Pricing.cshtml" />
+    <Content Include="Views\Misc\Search.cshtml" />
+    <Content Include="Views\Misc\Versions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

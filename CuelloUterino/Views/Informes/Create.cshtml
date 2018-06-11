@@ -27,7 +27,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>NUEVO TAMIZAJE DE CÁNCER CÉRVICOUTERINO</h2>
+                        <h2>NUEVO TAMIZAJE DE CÁNCER CERVICOUTERINO</h2>
 
                     </header>
 
@@ -139,15 +139,7 @@
                                                 </label>
                                             </section>
                                         </div>
-                                        <div class="row">
-                                            <section class="col col-lg-12">
-                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
-                                                <label class="input">
-                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
-                                                </label>
-                                            </section>
-                                        </div>
+                                       
                                     </article>
                                     <br />                                    
                                     <article>
@@ -194,6 +186,22 @@
                                         <br />
                                         <div class="row">
                                             <section class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.IdValoracion)</label>
+                                                <label class="input">
+                                                    @Html.DropDownList("IdValoracion", null, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.IdValoracion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section id="IdValoracionNoAdecuadaText" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.DescripcionValoracion)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="DescripcionValoracion" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.DescripcionValoracion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-lg-12">
                                                 <label>@Html.DisplayNameFor(model => model.IdMaterial)</label>
                                                 <label class="input">
                                                     @Html.DropDownList("IdMaterial", null, htmlAttributes: new { @class = "form-control" })
@@ -221,6 +229,13 @@
                                                 <label class="input">
                                                     <input maxlength="200" name="OtroAnticoncepcion" class="form-control" />
                                                     @Html.ValidationMessageFor(model => model.OtroAnticoncepcion, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
+                                            <section id="IdAnticoncepcionOralInyectable" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.AnticoncepcionOralInyectable) <b>"Oral o Inyectable"</b></label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="AnticoncepcionOralInyectable" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.AnticoncepcionOralInyectable, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
                                         </div>
@@ -314,6 +329,13 @@
                                                     @Html.ValidationMessageFor(model => model.IdDiagnosticoCitologico, "", new { @class = "text-danger" })
                                                 </label>
                                             </section>
+                                            <section id="otroDiagnosticoCitologicoText" class="col col-lg-12">
+                                                <label>@Html.DisplayNameFor(model => model.OtroDiagnosticoCitologico)</label>
+                                                <label class="input">
+                                                    <input maxlength="200" name="OtroDiagnosticoCitologico" class="form-control" />
+                                                    @Html.ValidationMessageFor(model => model.OtroDiagnosticoCitologico, "", new { @class = "text-danger" })
+                                                </label>
+                                            </section>
                                         </div>
                                     </article>
                                     <br />
@@ -363,8 +385,6 @@
                                                     <i></i>
                                                 </label>
                                             </section>
-
-
                                         </div>
                                         <br />
                                         <div class="row">
@@ -388,7 +408,8 @@
                                     <br />
                                 </fieldset>
                                 <footer>
-                                    <button type="submit" id="insertarMuestra" class="btn btn-primary">
+                                    <button type="submit" id="insertarMuestra"  class="btn btn-primary" data-placement="top" data-original-title="Salvar" data-html="true">
+                                        <i class="fa fa-save"></i>
                                         Guardar
                                     </button>
                                     <a class=" btn btn-default" id="regresar1" href="/informes/index">Cancelar</a>
@@ -437,6 +458,16 @@
 
         });
 
+        $("#IdValoracion").change(function () {
+            var b = $("#IdValoracion").val();
+            if (!(b === "2")) {
+                $('#IdValoracionNoAdecuadaText').hide();
+            } else {
+                $('#IdValoracionNoAdecuadaText').show();
+            }
+
+        });
+
         $("#IdAnticoncepcion").change(function () {
             var b = $("#IdAnticoncepcion").val();
             if (!(b === "4")) {
@@ -447,12 +478,22 @@
 
         });
 
-        $("#IdEdades").change(function () {
-            var b = $("#IdEdades").val();
-            if (!(b === "4")) {
-                $('#otroEdadesText').hide();
+        $("#IdAnticoncepcion").change(function () {
+            var b = $("#IdAnticoncepcion").val();
+            if (!(b === "1")) {
+                $('#IdAnticoncepcionOralInyectable').hide();
             } else {
-                $('#otroEdadesText').show();
+                $('#IdAnticoncepcionOralInyectable').show();
+            }
+
+        });
+
+        $("#IdDiagnosticoCitologico").change(function () {
+            var b = $("#IdDiagnosticoCitologico").val();
+            if (!(b === "13")) {
+                $('#otroDiagnosticoCitologicoText').hide();
+            } else {
+                $('#otroDiagnosticoCitologicoText').show();
             }
 
         });
@@ -460,8 +501,17 @@
 
         $(document).ready(function () {
             $('#otroMaterialText').hide();
+            $('#otroDiagnosticoCitologicoText').hide();
             $('#otroAnticoncepcionText').hide();
-            $('#otroEdadesText').hide();
+            var b = $("#IdAnticoncepcion").val();
+            if (!(b === "1")) {
+                $('#IdAnticoncepcionOralInyectable').hide();
+            } else {
+                $('#IdAnticoncepcionOralInyectable').show();
+            }
+
+            //$('#otroEdadesText').hide();
+            $('#IdValoracionNoAdecuadaText').hide();
             
             var $checkoutForm = $('#checkout-form').validate({
                 // Rules for form validation

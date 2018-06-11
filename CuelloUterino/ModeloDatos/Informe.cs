@@ -111,10 +111,8 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("¿ Biopsia ?")]
         public bool Biopsia { get; set; }
 
-
         [DisplayName("Última menstruación")]
         public string UltimaMenstruacion { get; set; }
-
 
         [DisplayName("Último parto")]
         public string UltimoParto { get; set; }
@@ -134,14 +132,23 @@ namespace CuelloUterino.ModeloDatos
         [DisplayName("# Cesáreas")]
         public string NumeroCesareas { get; set; }
 
-        [DisplayName("Otro material")]
+        [DisplayName("Descripción del material")]
         public string OtroMaterial { get; set; }
 
-        [DisplayName("Otro anticoncepción")]
+        [DisplayName("Descripción de la anticoncepción")]
         public string OtroAnticoncepcion { get; set; }
 
-        [DisplayName("Otro edades")]
+        [DisplayName("Descripción de las edades")]
         public string OtroEdades { get; set; }
+
+        [DisplayName("Descripción de la valoración")]
+        public string DescripcionValoracion { get; set; }
+
+        [DisplayName("Descripción de la anticoncepción")]
+        public string AnticoncepcionOralInyectable { get; set; }
+
+        [DisplayName("Descripción del diagnostico citológico")]
+        public string OtroDiagnosticoCitologico { get; set; }
 
         public virtual Anticoncepcion Anticoncepcion { get; set; }
 

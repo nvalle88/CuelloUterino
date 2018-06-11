@@ -19,6 +19,7 @@
 
                         @Html.AntiForgeryToken()
                         @Html.ValidationBootstrap()
+                        
                         <fieldset>
                             <section>
                                 <label class="label">@Html.DisplayNameFor(model => model.Email)</label>
@@ -30,7 +31,7 @@
                             </section>
 
                             <section>
-                                <label class="label">@Html.DisplayNameFor(model => model.Password)</label>
+                                <label  class="label ">@Html.DisplayNameFor(model => model.Password)</label>
                                 <label class="input">
                                     <i class="icon-append fa fa-lock"></i>
                                     <input type="password" name="Password">
@@ -47,11 +48,10 @@
                             </section>
                         </fieldset>
                         <footer>
-
                             <button type="submit" class="btn btn-primary">
                                 Aceptar
                             </button>
-                           <i class="fa fa-plus"></i> @Html.ActionLink("Registrar nuevo usuario", "Register", "Account")
+                          
                         </footer>
                     </form>
                 </div>

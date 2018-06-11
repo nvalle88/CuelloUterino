@@ -1,4 +1,5 @@
-﻿using CuelloUterino.ModeloDatos;
+﻿using CuelloUterino.Controllers;
+using CuelloUterino.ModeloDatos;
 using CuelloUterino.Models;
 using CuelloUterino.Utiles;
 using Microsoft.AspNet.Identity;
@@ -91,16 +92,24 @@ namespace CuelloUterino
 
         private void CreateRoles(ApplicationDbContext db)
         {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
-            if (!roleManager.RoleExists("Consulta"))
+            try
             {
-                roleManager.Create(new IdentityRole("Consulta"));
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+
+                if (!roleManager.RoleExists("Consulta"))
+                {
+                    roleManager.Create(new IdentityRole("Consulta"));
+                }
+
+                if (!roleManager.RoleExists("Administrador"))
+                {
+                    roleManager.Create(new IdentityRole("Administrador"));
+                }
             }
-
-            if (!roleManager.RoleExists("Administrador"))
+            catch (Exception)
             {
-                roleManager.Create(new IdentityRole("Administrador"));
+                HttpContext.Current.RewritePath("~/Account/Error");
             }
         }
     }

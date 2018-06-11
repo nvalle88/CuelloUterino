@@ -30,19 +30,19 @@
                     @if (User.IsInRole("Consulta"))
     {
                 <li class="@Html.RouteIf("home", "active")">
-                    <a class="analiticamenu" href="@Url.Action("index", "home")" title="Analítica"><span class="menu-item-parent">Analítica</span></a>
+                    <a class="analiticamenu" href="@Url.Action("index", "home")" title="Analítica"><span class="menu-item-parent"><i class="fa fa-dashboard"></i>&nbsp;Analítica</span></a>
                 </li>
 }
                     @if (User.IsInRole("Administrador"))
                     {
                 <li class="@Html.RouteIf("Informes", "active")">
-                    <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent">Tamizaje</span></a>
+                    <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent"><i class="fa fa-table"></i>&nbsp;Tamizaje</span></a>
                 </li>
                     }
                 @if (User.IsInRole("Consulta"))
 {
                 <li class="@Html.RouteIf("Reports", "active")">
-                    <a href="@Url.Action("Report", "Reports")" title="Dashboard"><span class="menu-item-parent">Reporte</span></a>
+                    <a href="@Url.Action("Report", "Reports")" title="Reporte"><span class="menu-item-parent"><i class="fa fa-file-text-o"></i>&nbsp;Reporte</span></a>
                 </li>}
                 </ul>
             </li>

@@ -26,7 +26,7 @@
                 <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                     <header>
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>MUESTRAS DE TAMIZAJES DE CÁNCER CÉRVICOUTERINO</h2>
+                        <h2>MUESTRAS DE TAMIZAJES DE CÁNCER CERVICOUTERINO</h2>
                     </header>
                     <div>
                         <div class="jarviswidget-editbox">
@@ -71,8 +71,8 @@
                                                 @Html.DisplayFor(modelItem => item.Correo)
                                             </td>
                                             <td>
-                                                @Html.ActionLink("Editar", "Edit", new { id = item.IdInforme },new {@class="editar" }) |
-                                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdInforme }, new { @class = "eliminar", onclick = "return confirm('Desea eliminar el registro... ?');" })
+                                                @Html.ActionLink(" ", "Edit", new { id = item.IdInforme }, new { @class = "editar btn btn-default btn-md glyphicon glyphicon-edit", @style = "color:blue" }) &nbsp;&nbsp;&nbsp;
+                                                @Html.ActionLink(" ", "Delete", new { id = item.IdInforme }, new { @class = "eliminar btn btn-default btn-md glyphicon glyphicon-trash", @style = "color:blue", onclick = "return confirm('Desea eliminar el registro... ?');" })
                                             </td>
                                         </tr>
                                     }
