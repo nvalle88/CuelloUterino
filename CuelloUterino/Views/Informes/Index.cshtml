@@ -110,6 +110,8 @@
 
 
             $("#nuevo").click(function () {
+                $("#nuevo").prop("disabled", "disabled");
+                $("#nuevo").html("<i class='fa fa-spinner fa-spin'></i> ");
                 $('#content').waitMe({
                     effect: 'ios',
                     text: '',
@@ -119,6 +121,8 @@
             });
 
             $('a.editar').click(function () {
+                $('a.editar').prop("disabled", "disabled");
+                $('a.editar').html("<i class='fa fa-spinner fa-spin'></i> ");
                 $('#content').waitMe({
                     effect: 'ios',
                     text: '',

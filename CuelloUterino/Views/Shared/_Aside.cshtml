@@ -35,7 +35,7 @@
 }
                     @if (User.IsInRole("Administrador"))
                     {
-                <li class="@Html.RouteIf("Informes", "active")">
+                <li id="informeMenu" class="@Html.RouteIf("Informes", "active")">
                     <a class="tamisajemenu" href="@Url.Action("Index", "Informes")" title="Tamizajes"><span class="menu-item-parent"><i class="fa fa-table"></i>&nbsp;Tamizaje</span></a>
                 </li>
                     }
@@ -54,9 +54,5 @@
 
 </aside>
 
-    <script type="text/javascript">
-        
-
-        
-    </script>
+   
 
