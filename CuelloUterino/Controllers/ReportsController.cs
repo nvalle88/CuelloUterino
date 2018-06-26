@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace CuelloUterino.Controllers
 {
+    [Authorize(Roles = "Consulta")]
     public class ReportsController : Controller
     {
         // GET: Reports
